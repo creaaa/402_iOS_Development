@@ -15,6 +15,15 @@ class ViewController: UIViewController {
     var greenView:    UIView!
     var purpleView:   UIView!
     
+    var orangeView1:  UIView!
+    var orangeView2:  UIView!
+    var redView:      UIView!
+    var blueView1:    UIView!
+    var blueView2:    UIView!
+    var blueView3:    UIView!
+    
+    
+    
     var views: [UIView] = []
     
     var toggleButton: UIButton!
@@ -42,17 +51,42 @@ class ViewController: UIViewController {
         self.greenView.addSubview(purpleView)
         
         
+        /* それ以外 */
+        self.orangeView1 = self.yieldView(color: .orange)
+        self.orangeView2 = self.yieldView(color: .orange)
+        self.redView     = self.yieldView(color: .red)
+        self.blueView1   = self.yieldView(color: .blue)
+        self.blueView2   = self.yieldView(color: .blue)
+        self.blueView3   = self.yieldView(color: .blue)
+        
+        self.greenView.addSubview(orangeView1)
+        self.greenView.addSubview(orangeView2)
+        self.greenView.addSubview(redView)
+        self.greenView.addSubview(blueView1)
+        self.greenView.addSubview(blueView2)
+        self.greenView.addSubview(blueView3)
+        
+        
         // 3. トグルボタン定義 + addSubView
         self.toggleButton = yieldToggleButton()
         self.view.addSubview(self.toggleButton)
         
         
-        self.views = [greenView, purpleView]
+        self.views = [greenView, purpleView, orangeView1, orangeView2, redView, blueView1, blueView2, blueView3]
         
         
         // 4. 制約を付加
         self.yieldViewConstraint(viewColor: .green)  // 緑ビュー
         self.yieldViewConstraint(viewColor: .purple, isPurpleView: true) // 紫ビュー
+        
+        
+        // TODO: -
+        
+        
+        
+        
+        
+        
         self.yieldToggleButtonConstraint()
 
     }
