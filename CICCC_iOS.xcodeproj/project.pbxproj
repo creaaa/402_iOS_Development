@@ -13,6 +13,7 @@
 		4419EE2E1ED62459004E9A30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4419EE2D1ED62459004E9A30 /* Assets.xcassets */; };
 		4419EE311ED62459004E9A30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4419EE2F1ED62459004E9A30 /* LaunchScreen.storyboard */; };
 		4419EE391ED6321B004E9A30 /* ApplyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419EE381ED6321B004E9A30 /* ApplyProtocol.swift */; };
+		448AB1FC1ED77D4A00A51BC1 /* ConstraintDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448AB1FB1ED77D4A00A51BC1 /* ConstraintDef.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4419EE301ED62459004E9A30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4419EE321ED62459004E9A30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4419EE381ED6321B004E9A30 /* ApplyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyProtocol.swift; sourceTree = "<group>"; };
+		448AB1FB1ED77D4A00A51BC1 /* ConstraintDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDef.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				4419EE261ED62459004E9A30 /* AppDelegate.swift */,
-				4419EE281ED62459004E9A30 /* ViewController.swift */,
 				4419EE381ED6321B004E9A30 /* ApplyProtocol.swift */,
+				448AB1FB1ED77D4A00A51BC1 /* ConstraintDef.swift */,
+				4419EE281ED62459004E9A30 /* ViewController.swift */,
 				4419EE2A1ED62459004E9A30 /* Main.storyboard */,
 				4419EE2D1ED62459004E9A30 /* Assets.xcassets */,
 				4419EE2F1ED62459004E9A30 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			files = (
 				4419EE391ED6321B004E9A30 /* ApplyProtocol.swift in Sources */,
 				4419EE291ED62459004E9A30 /* ViewController.swift in Sources */,
+				448AB1FC1ED77D4A00A51BC1 /* ConstraintDef.swift in Sources */,
 				4419EE271ED62459004E9A30 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +312,7 @@
 				4419EE371ED62459004E9A30 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
