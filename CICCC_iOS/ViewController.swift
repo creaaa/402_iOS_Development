@@ -72,10 +72,17 @@ class ViewController: UIViewController {
     
     func yieldGreenViewConstraint() {
         
-        self.view.removeConstraints(self.constraints)
+        // Way 1
+        
+        // self.view.removeConstraints(self.constraints)
         
         // 本来これ書かないといけないっぽいのに、なくても動いてるんだけど。なんでや。↑のメソッドよくわからん...
         // self.constraints = []
+        
+        
+        // Way 2. ↑に比べ、こっちのほうが直感的ではある。ただ、constraintsに無限に要素が増えてくが...
+        self.constraints.forEach{ $0.isActive = false }
+        
         
                      /* P    L    S*/
         let marginX = [350, 100, 325]
