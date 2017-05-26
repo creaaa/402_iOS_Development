@@ -43,6 +43,15 @@ class ViewController: UIViewController {
         self.greenView = yieldView(color: .green)
         self.view.addSubview(self.greenView)
 
+        // すぐにけせ
+        /*
+        print(self.greenView.intrinsicContentSize)
+        view.setContentCompressionResistancePriority(
+            13,
+            for: .horizontal
+        )
+        */
+        
         // 2. 紫ボタン定義 + addSubView
         self.purpleView = yieldView(color: .purple)
         self.greenView.addSubview(self.purpleView)
@@ -80,7 +89,7 @@ class ViewController: UIViewController {
         self.yieldRedConstraint()     // 赤ビュー
         self.yieldOrangeConstraint()  // オレンジビュー
         
-        self.yieldToggleButtonConstraint()
+        self.yieldToggleButtonConstraint() // トグルボタン
 
     }
     
@@ -88,7 +97,6 @@ class ViewController: UIViewController {
     func yieldView(color: UIColor) -> UIView {
         
         let view = UIView(frame: .zero).apply {
-            $0.frame = CGRect.zero
             $0.backgroundColor = color
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
@@ -201,17 +209,18 @@ class ViewController: UIViewController {
         
         if isPurpleView {
             self.greenViewConstraints.append(contentsOf: constraints)
-                self.greenView.addConstraints(constraints)
+            self.greenView.addConstraints(constraints)
         } else {
             self.rootViewConstraints.append(contentsOf: constraints)
-            //UIView.animate(withDuration: 1) {
-                self.view.addConstraints(constraints)
-            //}
+            self.view.addConstraints(constraints)
         }
         
     }
     
-    
+    // ボタンが押されたとき、旧制約をinactiveにしたり、定数を「編集」したいため、
+    // 後から再利用できるよう、フィールドとして保持している
+    // ここに持ってなかったら、おそらく各ビューのconstraintsプロパティから当該制約を再帰的に特定しないといけなくなりそう、
+    // それだとめんどいからな
     var blueView1Top: NSLayoutConstraint!
     var blueView2Top: NSLayoutConstraint!
     var blueView3Top: NSLayoutConstraint!
@@ -219,6 +228,8 @@ class ViewController: UIViewController {
     
     func yieldBlueConstraint() {
         
+        
+        // 前の制約が残ってれば、削除しておく (∵ビューモード変更時に追加される制約と矛盾しレイアウトが崩れるため)
         if let _ = blueView1Top, let _ = blueView2Top, let _ = blueView3Top {
             blueView1Top.isActive = false
             blueView2Top.isActive = false
@@ -349,9 +360,7 @@ class ViewController: UIViewController {
         /* ちな、赤・オレンジはビューモードにより制約は変化しないため、何もせずに平気です */
         
         
-        UIView.animate(withDuration: 0.5) {
-            self.view.layoutIfNeeded()
-        }
+        UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
         
         
         // ついでにボタンのラベルも変えとくね
