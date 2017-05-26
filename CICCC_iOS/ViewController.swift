@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     var views: [UIView] = []
     
     var toggleButton: UIButton!
-    var viewMode:     ViewMode = .portlait
+    var viewMode:     ViewMode = .square
     
     
     // 再利用する制約
@@ -72,16 +72,16 @@ class ViewController: UIViewController {
         self.view.addSubview(self.toggleButton)
         
         
-        self.views = [greenView, purpleView, orangeView1, orangeView2, redView, blueView1, blueView2, blueView3]
+        self.views = [greenView, purpleView, orangeView1, orangeView2, redView,
+                      blueView1, blueView2, blueView3]
         
         
         // 4. 制約を付加
         self.yieldViewConstraint(viewColor: .green)  // 緑ビュー
         self.yieldViewConstraint(viewColor: .purple, isPurpleView: true) // 紫ビュー
         
-        
-        // TODO: -
-        
+
+        self.yieldBlueConstraint()
         
         
         
@@ -216,6 +216,55 @@ class ViewController: UIViewController {
     }
     
     
+    
+    var blueView1Top: NSLayoutConstraint!
+    var blueView2Top: NSLayoutConstraint!
+    var blueView3Top: NSLayoutConstraint!
+    
+    
+    
+    func yieldBlueConstraint(isBlueView3: Bool = false) {
+        
+        // ラベルを、LayoutGuideの左marginから20ptの位置に置く制約
+
+        // ラベル(1) の leading(2) は、~と等しい(3)
+        // label.leadingAnchor.constraintEqualToAnchor
+        
+        // ビューのマージン(4) の      leading(5)   (6- あれば) +20(7)
+        // (view.layoutMarginsGuide.leadingAnchor, constant: 20.0).active = true
+
+        
+        
+        
+        
+
+        // Blue1
+        
+        self.blueView1.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
+        self.blueView1.heightAnchor.constraint(equalToConstant: 50).isActive = true  // 高さ
+        self.blueView1.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
+        
+        // Blue2
+        self.blueView2.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
+        self.blueView2.heightAnchor.constraint(equalToConstant: 50).isActive = true  // 高さ
+        self.blueView2.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
+        
+        // Blue3
+        self.blueView3.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
+        self.blueView3.heightAnchor.constraint(equalToConstant: 50).isActive = true // 高さ
+        self.blueView3.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
+        
+        // Y軸マージン: ビューモードにより可変
+        
+        let margin: [(CGFloat, CGFloat)] = [(100,120), (25, 25), (60,65)]
+        
+        self.blueView1.topAnchor.constraint(equalTo: self.greenView.topAnchor, constant: margin[viewMode.rawValue].0).isActive = true
+        self.blueView2.topAnchor.constraint(equalTo: self.blueView1.bottomAnchor, constant: margin[viewMode.rawValue].1).isActive = true
+        self.blueView3.topAnchor.constraint(equalTo: self.blueView2.bottomAnchor, constant: margin[viewMode.rawValue].1).isActive = true
+        
+    }
+    
+    
     func yieldToggleButtonConstraint() {
         
         // 左マージン
@@ -262,6 +311,9 @@ class ViewController: UIViewController {
         // Way 2. ↑に比べ、こっちのほうが直感的ではある。ただ、constraintsに無限に要素が増えてくが...
         self.rootViewConstraints.forEach{  $0.isActive = false }
         self.greenViewConstraints.forEach{ $0.isActive = false }
+        
+        // yieldBlueConstraintでyieldした制約はこうしないと消せません
+        
 
         
         // まず、ステートを変えて...
@@ -272,6 +324,7 @@ class ViewController: UIViewController {
         // ほんで、緑と紫ビューの制約を更新
         self.yieldViewConstraint(viewColor: .green)
         self.yieldViewConstraint(viewColor: .purple, isPurpleView: true)
+        self.yieldBlueConstraint()
         
         
         // ついでにボタンのラベルも変えとくね
