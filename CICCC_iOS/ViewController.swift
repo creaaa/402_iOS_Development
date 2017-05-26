@@ -204,10 +204,12 @@ class ViewController: UIViewController {
         
         if isPurpleView {
             self.greenViewConstraints.append(contentsOf: constraints)
-            self.greenView.addConstraints(constraints)
+                self.greenView.addConstraints(constraints)
         } else {
             self.rootViewConstraints.append(contentsOf: constraints)
-            self.view.addConstraints(constraints)
+            //UIView.animate(withDuration: 1) {
+                self.view.addConstraints(constraints)
+            //}
         }
         
     }
@@ -341,9 +343,13 @@ class ViewController: UIViewController {
         // 青の更新
         let margin: [(CGFloat, CGFloat)] = [(100,120), (25, 25), (60,65)]
         
-        blueView1Top.constant = margin[viewMode.rawValue].0
-        blueView2Top.constant = margin[viewMode.rawValue].1
-        blueView3Top.constant = margin[viewMode.rawValue].1
+        self.blueView1Top.constant = margin[self.viewMode.rawValue].0
+        self.blueView2Top.constant = margin[self.viewMode.rawValue].1
+        self.blueView3Top.constant = margin[self.viewMode.rawValue].1
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
         
         /* 赤、オレンジはビューモードにより制約は変化しないため、何もせずに平気 */
         
