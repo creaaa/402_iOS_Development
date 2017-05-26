@@ -23,11 +23,10 @@ class ViewController: UIViewController {
     var blueView3:    UIView!
     
     
-    
     var views: [UIView] = []
     
     var toggleButton: UIButton!
-    var viewMode:     ViewMode = .square
+    var viewMode:     ViewMode = .portlait
     
     
     // 再利用する制約
@@ -82,10 +81,6 @@ class ViewController: UIViewController {
         
 
         self.yieldBlueConstraint()
-        
-        
-        
-        
         
         self.yieldToggleButtonConstraint()
 
@@ -233,10 +228,7 @@ class ViewController: UIViewController {
         // ビューのマージン(4) の      leading(5)   (6- あれば) +20(7)
         // (view.layoutMarginsGuide.leadingAnchor, constant: 20.0).active = true
 
-        
-        
-        
-        
+
 
         // Blue1
         
@@ -258,9 +250,14 @@ class ViewController: UIViewController {
         
         let margin: [(CGFloat, CGFloat)] = [(100,120), (25, 25), (60,65)]
         
-        self.blueView1.topAnchor.constraint(equalTo: self.greenView.topAnchor, constant: margin[viewMode.rawValue].0).isActive = true
-        self.blueView2.topAnchor.constraint(equalTo: self.blueView1.bottomAnchor, constant: margin[viewMode.rawValue].1).isActive = true
-        self.blueView3.topAnchor.constraint(equalTo: self.blueView2.bottomAnchor, constant: margin[viewMode.rawValue].1).isActive = true
+        self.blueView1Top = self.blueView1.topAnchor.constraint(equalTo: self.greenView.topAnchor, constant: margin[viewMode.rawValue].0)
+        self.blueView1Top.isActive = true
+        
+        self.blueView2Top = self.blueView2.topAnchor.constraint(equalTo: self.blueView1.bottomAnchor, constant: margin[viewMode.rawValue].1)
+        self.blueView2Top.isActive = true
+        
+        self.blueView3Top = self.blueView3.topAnchor.constraint(equalTo: self.blueView2.bottomAnchor, constant: margin[viewMode.rawValue].1)
+        self.blueView3Top.isActive = true
         
     }
     
@@ -313,7 +310,6 @@ class ViewController: UIViewController {
         self.greenViewConstraints.forEach{ $0.isActive = false }
         
         // yieldBlueConstraintでyieldした制約はこうしないと消せません
-        
 
         
         // まず、ステートを変えて...
@@ -324,7 +320,15 @@ class ViewController: UIViewController {
         // ほんで、緑と紫ビューの制約を更新
         self.yieldViewConstraint(viewColor: .green)
         self.yieldViewConstraint(viewColor: .purple, isPurpleView: true)
-        self.yieldBlueConstraint()
+        // self.yieldBlueConstraint()
+        
+        
+        let margin: [(CGFloat, CGFloat)] = [(100,120), (25, 25), (60,65)]
+        
+        
+        blueView1Top.constant = margin[viewMode.rawValue].0
+        blueView2Top.constant = margin[viewMode.rawValue].1
+        blueView3Top.constant = margin[viewMode.rawValue].1
         
         
         // ついでにボタンのラベルも変えとくね
