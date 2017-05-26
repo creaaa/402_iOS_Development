@@ -28,10 +28,10 @@ class ViewController: UIViewController {
     var toggleButton: UIButton!
     var viewMode:     ViewMode = .portlait
     
-    
     // 再利用する制約
     var rootViewConstraints:  [NSLayoutConstraint] = []
     var greenViewConstraints: [NSLayoutConstraint] = []
+    
     
     override func viewDidLoad() {
         
@@ -39,43 +39,40 @@ class ViewController: UIViewController {
         
         self.view.backgroundColor = .yellow
         
-        
         // 1. 緑ビュー定義 + addSubView
         self.greenView = yieldView(color: .green)
         self.view.addSubview(self.greenView)
 
-        
         // 2. 紫ボタン定義 + addSubView
         self.purpleView = yieldView(color: .purple)
         self.greenView.addSubview(self.purpleView)
         
-        
-        /* それ以外 */
-        self.redView     = self.yieldView(color: .red)
-        self.orangeView1 = self.yieldView(color: .orange)
-        self.orangeView2 = self.yieldView(color: .orange)
+        /* 3. それ以外を定義 + addSubView */
         self.blueView1   = self.yieldView(color: .blue)
         self.blueView2   = self.yieldView(color: .blue)
         self.blueView3   = self.yieldView(color: .blue)
-        
-        self.greenView.addSubview(redView)
-        self.greenView.addSubview(orangeView1) // ここ、赤より早くaddしてたから下に潜り込んでた。くそ...
-        self.greenView.addSubview(orangeView2) // ここ、赤より早くaddしてたから下に潜り込んでた。くそ...
         self.greenView.addSubview(blueView1)
         self.greenView.addSubview(blueView2)
         self.greenView.addSubview(blueView3)
         
+        self.redView     = self.yieldView(color: .red)
+        self.greenView.addSubview(redView)
         
-        // 3. トグルボタン定義 + addSubView
+        self.orangeView1 = self.yieldView(color: .orange)
+        self.orangeView2 = self.yieldView(color: .orange)
+        self.greenView.addSubview(orangeView1) // ここ、赤より早くaddしてたから下に潜り込んでた。くそ...
+        self.greenView.addSubview(orangeView2) // ここ、赤より早くaddしてたから下に潜り込んでた。くそ...
+    
+        
+        // 4. トグルボタン定義 + addSubView
         self.toggleButton = yieldToggleButton()
         self.view.addSubview(self.toggleButton)
-        
         
         self.views = [greenView, purpleView, redView, orangeView1, orangeView2,
                       blueView1, blueView2, blueView3]
         
         
-        // 4. 制約を付加
+        // 5. 制約を付加
         self.yieldViewConstraint(viewColor: .green)  // 緑ビュー
         self.yieldViewConstraint(viewColor: .purple, isPurpleView: true) // 紫ビュー
         
@@ -219,23 +216,36 @@ class ViewController: UIViewController {
     var blueView2Top: NSLayoutConstraint!
     var blueView3Top: NSLayoutConstraint!
     
+    var count = 0
     
     func yieldBlueConstraint() {
         
-        // Blue1
-        self.blueView1.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
-        self.blueView1.heightAnchor.constraint(equalToConstant: 50).isActive = true  // 高さ
-        self.blueView1.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
+        blueView1Top = nil
+        blueView2Top = nil
+        blueView3Top = nil
         
-        // Blue2
-        self.blueView2.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
-        self.blueView2.heightAnchor.constraint(equalToConstant: 50).isActive = true  // 高さ
-        self.blueView2.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
         
-        // Blue3
-        self.blueView3.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
-        self.blueView3.heightAnchor.constraint(equalToConstant: 50).isActive = true // 高さ
-        self.blueView3.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
+        //if (count == 0) {
+        
+            // Blue1
+            self.blueView1.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
+            self.blueView1.heightAnchor.constraint(equalToConstant: 50).isActive = true  // 高さ
+            self.blueView1.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
+            
+            // Blue2
+            self.blueView2.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
+            self.blueView2.heightAnchor.constraint(equalToConstant: 50).isActive = true  // 高さ
+            self.blueView2.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
+            
+            // Blue3
+            self.blueView3.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
+            self.blueView3.heightAnchor.constraint(equalToConstant: 50).isActive = true // 高さ
+            self.blueView3.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
+            
+       // }
+        
+        
+        
         
         // Y軸マージン: ビューモードにより可変
         
@@ -249,6 +259,13 @@ class ViewController: UIViewController {
         
         self.blueView3Top = self.blueView3.topAnchor.constraint(equalTo: self.blueView2.bottomAnchor, constant: margin[viewMode.rawValue].1)
         self.blueView3Top.isActive = true
+        
+        
+        print(self.blueView1Top.constant)
+        print(self.blueView2Top.constant)
+        print(self.blueView3Top.constant)
+        
+        count += 1
         
     }
     
@@ -274,7 +291,6 @@ class ViewController: UIViewController {
         // X軸
         self.orangeView1.leadingAnchor.constraint(equalTo: self.redView.leadingAnchor, constant: 10).isActive = true
         self.orangeView2.leadingAnchor.constraint(equalTo: self.orangeView1.trailingAnchor, constant: 10).isActive = true
-
         
         // Y軸
         self.orangeView1.topAnchor.constraint(equalTo: self.redView.topAnchor, constant: 10).isActive = true
@@ -340,18 +356,25 @@ class ViewController: UIViewController {
         self.yieldViewConstraint(viewColor: .green)
         self.yieldViewConstraint(viewColor: .purple, isPurpleView: true)
         
+        /*
         // 青の更新
         let margin: [(CGFloat, CGFloat)] = [(100,120), (25, 25), (60,65)]
         
         self.blueView1Top.constant = margin[self.viewMode.rawValue].0
         self.blueView2Top.constant = margin[self.viewMode.rawValue].1
         self.blueView3Top.constant = margin[self.viewMode.rawValue].1
+        */
+        
+        self.yieldBlueConstraint()
+        
+        
+        /* 赤、オレンジはビューモードにより制約は変化しないため、何もせずに平気 */
+        
         
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }
         
-        /* 赤、オレンジはビューモードにより制約は変化しないため、何もせずに平気 */
         
         // ついでにボタンのラベルも変えとくね
         switch viewMode {
