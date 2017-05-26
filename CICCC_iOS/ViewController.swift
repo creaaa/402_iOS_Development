@@ -216,35 +216,30 @@ class ViewController: UIViewController {
     var blueView2Top: NSLayoutConstraint!
     var blueView3Top: NSLayoutConstraint!
     
-    var count = 0
     
     func yieldBlueConstraint() {
         
-        blueView1Top = nil
-        blueView2Top = nil
-        blueView3Top = nil
+        if let _ = blueView1Top, let _ = blueView2Top, let _ = blueView3Top {
+            blueView1Top.isActive = false
+            blueView2Top.isActive = false
+            blueView3Top.isActive = false
+        }
         
         
-        //if (count == 0) {
+        // Blue1
+        self.blueView1.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
+        self.blueView1.heightAnchor.constraint(equalToConstant: 50).isActive = true  // 高さ
+        self.blueView1.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
         
-            // Blue1
-            self.blueView1.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
-            self.blueView1.heightAnchor.constraint(equalToConstant: 50).isActive = true  // 高さ
-            self.blueView1.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
-            
-            // Blue2
-            self.blueView2.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
-            self.blueView2.heightAnchor.constraint(equalToConstant: 50).isActive = true  // 高さ
-            self.blueView2.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
-            
-            // Blue3
-            self.blueView3.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
-            self.blueView3.heightAnchor.constraint(equalToConstant: 50).isActive = true // 高さ
-            self.blueView3.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
-            
-       // }
+        // Blue2
+        self.blueView2.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
+        self.blueView2.heightAnchor.constraint(equalToConstant: 50).isActive = true  // 高さ
+        self.blueView2.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
         
-        
+        // Blue3
+        self.blueView3.widthAnchor.constraint(equalToConstant: 50).isActive = true  // 幅
+        self.blueView3.heightAnchor.constraint(equalToConstant: 50).isActive = true // 高さ
+        self.blueView3.centerXAnchor.constraint(equalTo: self.greenView.centerXAnchor).isActive = true // X軸中央揃え
         
         
         // Y軸マージン: ビューモードにより可変
@@ -259,13 +254,6 @@ class ViewController: UIViewController {
         
         self.blueView3Top = self.blueView3.topAnchor.constraint(equalTo: self.blueView2.bottomAnchor, constant: margin[viewMode.rawValue].1)
         self.blueView3Top.isActive = true
-        
-        
-        print(self.blueView1Top.constant)
-        print(self.blueView2Top.constant)
-        print(self.blueView3Top.constant)
-        
-        count += 1
         
     }
     
@@ -352,23 +340,13 @@ class ViewController: UIViewController {
         
         print("現在のモード: \(viewMode)")
         
-        // ほんで、緑＆紫ビューの制約を更新
+        // ほんで、緑＆紫＆青ビューの制約を更新
         self.yieldViewConstraint(viewColor: .green)
         self.yieldViewConstraint(viewColor: .purple, isPurpleView: true)
-        
-        /*
-        // 青の更新
-        let margin: [(CGFloat, CGFloat)] = [(100,120), (25, 25), (60,65)]
-        
-        self.blueView1Top.constant = margin[self.viewMode.rawValue].0
-        self.blueView2Top.constant = margin[self.viewMode.rawValue].1
-        self.blueView3Top.constant = margin[self.viewMode.rawValue].1
-        */
-        
         self.yieldBlueConstraint()
         
         
-        /* 赤、オレンジはビューモードにより制約は変化しないため、何もせずに平気 */
+        /* ちな、赤・オレンジはビューモードにより制約は変化しないため、何もせずに平気です */
         
         
         UIView.animate(withDuration: 0.5) {
