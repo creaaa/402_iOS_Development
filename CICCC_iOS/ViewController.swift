@@ -47,13 +47,13 @@ class ViewController: UIViewController {
         
         // 2. 紫ボタン定義 + addSubView
         self.purpleView = yieldView(color: .purple)
-        self.greenView.addSubview(purpleView)
+        self.greenView.addSubview(self.purpleView)
         
         
         /* それ以外 */
+        self.redView     = self.yieldView(color: .red)
         self.orangeView1 = self.yieldView(color: .orange)
         self.orangeView2 = self.yieldView(color: .orange)
-        self.redView     = self.yieldView(color: .red)
         self.blueView1   = self.yieldView(color: .blue)
         self.blueView2   = self.yieldView(color: .blue)
         self.blueView3   = self.yieldView(color: .blue)
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         self.view.addSubview(self.toggleButton)
         
         
-        self.views = [greenView, purpleView, orangeView1, orangeView2, redView,
+        self.views = [greenView, purpleView, redView, orangeView1, orangeView2,
                       blueView1, blueView2, blueView3]
         
         
@@ -82,7 +82,6 @@ class ViewController: UIViewController {
         self.yieldBlueConstraint()    // 青ビュー
         self.yieldRedConstraint()     // 赤ビュー
         self.yieldOrangeConstraint()  // オレンジビュー
-        
         
         self.yieldToggleButtonConstraint()
 
@@ -120,6 +119,7 @@ class ViewController: UIViewController {
     }
     
     
+    // 緑＆紫ビューの制約を産出
     func yieldViewConstraint(viewColor: ViewColor, isPurpleView: Bool = false) {
         
         let targetView = self.views[viewColor.rawValue]  // ローカルコピー
@@ -213,11 +213,9 @@ class ViewController: UIViewController {
     }
     
     
-    
     var blueView1Top: NSLayoutConstraint!
     var blueView2Top: NSLayoutConstraint!
     var blueView3Top: NSLayoutConstraint!
-    
     
     
     func yieldBlueConstraint() {
@@ -274,18 +272,11 @@ class ViewController: UIViewController {
         // X軸
         self.orangeView1.leadingAnchor.constraint(equalTo: self.redView.leadingAnchor, constant: 10).isActive = true
         self.orangeView2.leadingAnchor.constraint(equalTo: self.orangeView1.trailingAnchor, constant: 10).isActive = true
-        
-        // なくてもよさそうなのになぁ...
-        // self.orangeView2.trailingAnchor.constraint(equalTo: self.redView.trailingAnchor, constant: -10).isActive = true
+
         
         // Y軸
         self.orangeView1.topAnchor.constraint(equalTo: self.redView.topAnchor, constant: 10).isActive = true
         self.orangeView2.topAnchor.constraint(equalTo: self.redView.topAnchor, constant: 10).isActive = true
-        
-        // なくてもよさそうなのになぁ...
-        //self.orangeView1.bottomAnchor.constraint(equalTo: self.redView.bottomAnchor, constant: -10).isActive = true
-        //self.orangeView2.bottomAnchor.constraint(equalTo: self.redView.bottomAnchor, constant: -10).isActive = true
-        
         
     }
     
@@ -337,17 +328,15 @@ class ViewController: UIViewController {
         self.rootViewConstraints.forEach{  $0.isActive = false }
         self.greenViewConstraints.forEach{ $0.isActive = false }
         
-        // yieldBlueConstraintでyieldした制約はこうしないと消せません
-
         
         // まず、ステートを変えて...
         self.viewMode = ViewMode(rawValue: (self.viewMode.rawValue + 1) % 3)!
         
         print("現在のモード: \(viewMode)")
         
-        // ほんで、緑ビューの制約を更新 (紫、赤、オレンジはビューモードにより制約は変化しないため、何もせずに平気)
+        // ほんで、緑＆紫ビューの制約を更新
         self.yieldViewConstraint(viewColor: .green)
-        
+        self.yieldViewConstraint(viewColor: .purple, isPurpleView: true)
         
         // 青の更新
         let margin: [(CGFloat, CGFloat)] = [(100,120), (25, 25), (60,65)]
@@ -356,6 +345,7 @@ class ViewController: UIViewController {
         blueView2Top.constant = margin[viewMode.rawValue].1
         blueView3Top.constant = margin[viewMode.rawValue].1
         
+        /* 赤、オレンジはビューモードにより制約は変化しないため、何もせずに平気 */
         
         // ついでにボタンのラベルも変えとくね
         switch viewMode {
