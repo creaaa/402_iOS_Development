@@ -26,8 +26,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navVCfor1 = UINavigationController()
         navVCfor1.tabBarItem.image = UIImage(named: "City")
         navVCfor1.tabBarItem.title = "Vancouver"
+        // navVCfor1.title = "バンクーバー"  // これコメントインすると、こっちがタブバーのタイトルになる
         
         let firstVC = CityViewController()
+        firstVC.navigationItem.title = "Vancouver"
         firstVC.view.tag = 1
         
         // firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
@@ -45,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navVCfor2.tabBarItem.title = "Mexico"
         
         let secondVC = CityViewController()
+        secondVC.navigationItem.title = "Mexico"
         secondVC.view.tag = 2
         
         // secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
@@ -61,6 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navVCfor3.tabBarItem.title = "Seoul"
         
         let thirdVC = CityViewController()
+        thirdVC.navigationItem.title = "Seoul"
+
         thirdVC.view.tag = 3
         
         // thirdVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 3)
@@ -77,6 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navVCfor4.tabBarItem.title = "Venice"
         
         let fourthVC = CityViewController()
+        fourthVC.navigationItem.title = "Venice"
         fourthVC.view.tag = 4
         
         // fourthVC.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 4)
@@ -90,10 +96,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // VC 5
         let navVCfor5 = UINavigationController()
+        
         navVCfor5.tabBarItem.image = UIImage(named: "City")
         navVCfor5.tabBarItem.title = "Tokyo"
         
         let fifthVC = CityViewController()
+        fifthVC.navigationItem.title = "Tokyo"
         fifthVC.view.tag = 5
         
         // fifthVC.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 5)
@@ -103,7 +111,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NavVCs.append(navVCfor5)
         VCs.append(fifthVC)
-        
         
         
         let tabBarController = UITabBarController()

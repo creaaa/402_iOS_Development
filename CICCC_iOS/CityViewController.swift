@@ -3,38 +3,65 @@ import UIKit
 
 class CityViewController: UIViewController {
 
+    var city = City()
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
 
-        self.view.backgroundColor = arc4random_uniform(2) == 0 ? .cyan: .yellow
+        self.view.backgroundColor = .gray  //arc4random_uniform(2) == 0 ? .cyan: .yellow
         
-        // self.tabBarItem.title = "not displayed"
+        // let cityName = ["Vancouver","Mexico","Seoul","Venice","Tokyo"]
+        // self.navigationItem.title = //cityName[self.view.tag]
         
+        let imageView = UIImageView().apply {
+            $0.image = UIImage(named: self.city.weather.weatherImgPath)
+            $0.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        let label = UILabel().apply {
+            $0.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+            $0.text = self.city.weather.weatherImgPath
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+
         let button = UIButton(type: .system).apply {
             $0.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-            $0.setTitle("move", for: .normal)
+            $0.setTitle("Detail", for: .normal)
             $0.setTitleColor(.black, for: .normal)
             $0.backgroundColor = .purple
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.addTarget(self, action: #selector(howWeatherDetails), for: .touchUpInside)
         }
         
+        self.view.addSubview(imageView)
+        self.view.addSubview(label)
         self.view.addSubview(button)
         
-        button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        // add constaints
         
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
+        imageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        imageView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -75).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 50).isActive = true
+        
+        button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80).isActive = true
+        
     }
     
     
     func howWeatherDetails() {
         let nextVC = DetailedViewController()
-        nextVC.no = self.view.tag
+        // nextVC.view.tintColor = .yellow  // これエラー！なぜならこの時点では cityがnilだからぬるぽになる
+        nextVC.city = self.city
+        
+        nextVC.view.tintColor = .yellow  // だからここに書け。ただしこれ意味発揮してない、なんで
+        
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
