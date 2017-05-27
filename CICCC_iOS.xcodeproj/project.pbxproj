@@ -13,7 +13,6 @@
 		4419EE2E1ED62459004E9A30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4419EE2D1ED62459004E9A30 /* Assets.xcassets */; };
 		4419EE311ED62459004E9A30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4419EE2F1ED62459004E9A30 /* LaunchScreen.storyboard */; };
 		4419EE391ED6321B004E9A30 /* ApplyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4419EE381ED6321B004E9A30 /* ApplyProtocol.swift */; };
-		445E71801ED8CD2200A2B123 /* Assignment2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445E717F1ED8CD2200A2B123 /* Assignment2ViewController.swift */; };
 		445E71821ED8D8C000A2B123 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445E71811ED8D8C000A2B123 /* CityViewController.swift */; };
 		445E71871ED8DE7500A2B123 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445E71861ED8DE7500A2B123 /* City.swift */; };
 		445E71891ED8F55E00A2B123 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445E71881ED8F55E00A2B123 /* DetailedViewController.swift */; };
@@ -32,7 +31,6 @@
 		4419EE301ED62459004E9A30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4419EE321ED62459004E9A30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4419EE381ED6321B004E9A30 /* ApplyProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyProtocol.swift; sourceTree = "<group>"; };
-		445E717F1ED8CD2200A2B123 /* Assignment2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment2ViewController.swift; sourceTree = "<group>"; };
 		445E71811ED8D8C000A2B123 /* CityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		445E71861ED8DE7500A2B123 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		445E71881ED8F55E00A2B123 /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				4419EE2A1ED62459004E9A30 /* Assignment2.storyboard */,
-				445E717F1ED8CD2200A2B123 /* Assignment2ViewController.swift */,
 			);
 			name = Assignment2;
 			sourceTree = "<group>";
@@ -202,7 +199,6 @@
 				445E71891ED8F55E00A2B123 /* DetailedViewController.swift in Sources */,
 				448AB1FC1ED77D4A00A51BC1 /* ConstraintDef.swift in Sources */,
 				445E718E1EDA28CF00A2B123 /* NavigationController.swift in Sources */,
-				445E71801ED8CD2200A2B123 /* Assignment2ViewController.swift in Sources */,
 				4419EE271ED62459004E9A30 /* AppDelegate.swift in Sources */,
 				445E71821ED8D8C000A2B123 /* CityViewController.swift in Sources */,
 				445E71901EDA2AAB00A2B123 /* LairViewController.swift in Sources */,

@@ -17,7 +17,6 @@ class LairViewController: UIViewController {
     
     func toTop() {
         self.navigationController?.popToRootViewController(animated: true)
-        print(AppDelegate.hoge)
     }
     
 }

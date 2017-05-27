@@ -18,7 +18,7 @@ class NavigationController: UINavigationController {
     
     
     func toTop() {
-        print("hoge-hoge-")
+        print("hogehoge-")
     }
 
 }
