@@ -5,7 +5,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    static let hoge = 42
 
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         // for assignment 1
@@ -18,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // for assignment 3
 
+        /*
         var NavVCs: [UINavigationController] = []
         var VCs: [UIViewController] = []
 
@@ -165,14 +168,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
         */
+ 
+        */
         
+        // for 4
+ 
         return true
+ 
     }
 }
-
-
-
-
 
 
 

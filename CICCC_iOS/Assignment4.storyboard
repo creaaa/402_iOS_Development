@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="np1-Zm-5Su">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lair View Controller-->
+        <scene sceneID="hJE-5H-NIG">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="eaf-9M-FQn" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rIo-JM-Rxo"/>
+                        <viewControllerLayoutGuide type="bottom" id="3p7-jv-foh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="c7w-jn-68p">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="front_door" translatesAutoresizingMaskIntoConstraints="NO" id="YSk-61-poJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQU-gY-3I8">
+                                <rect key="frame" x="149" y="519" width="76" height="30"/>
+                                <state key="normal" title="Coat Room"/>
+                                <connections>
+                                    <segue destination="3SR-3G-lEO" kind="show" id="r3e-pO-eGC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YSk-61-poJ" firstAttribute="leading" secondItem="c7w-jn-68p" secondAttribute="leading" id="BTy-7t-PSY"/>
+                            <constraint firstItem="3p7-jv-foh" firstAttribute="top" secondItem="aQU-gY-3I8" secondAttribute="bottom" constant="118" id="Pqb-6E-BJm"/>
+                            <constraint firstItem="aQU-gY-3I8" firstAttribute="centerX" secondItem="YSk-61-poJ" secondAttribute="centerX" id="TCW-57-ZDr"/>
+                            <constraint firstItem="YSk-61-poJ" firstAttribute="height" secondItem="c7w-jn-68p" secondAttribute="height" multiplier="1/2" id="ka2-9t-rED"/>
+                            <constraint firstItem="YSk-61-poJ" firstAttribute="top" secondItem="rIo-JM-Rxo" secondAttribute="bottom" id="u7T-n9-LBm"/>
+                            <constraint firstAttribute="trailing" secondItem="YSk-61-poJ" secondAttribute="trailing" id="vhp-ji-Uol"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FWs-uB-AGY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s4s-BV-sjX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="2032"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BID-yi-vLs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="np1-Zm-5Su" customClass="NavigationController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3sd-zE-bHE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eaf-9M-FQn" kind="relationship" relationship="rootViewController" id="Xgd-Rt-Vc3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOa-h0-ziF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-836" y="2031.6341829085459"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="mBg-NV-aqH">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="aoK-6B-mPg" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GS4-Dr-1P7"/>
+                        <viewControllerLayoutGuide type="bottom" id="1YK-uG-LHH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vwf-Ha-s2s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="library" translatesAutoresizingMaskIntoConstraints="NO" id="k4Y-5A-RW2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qym-Hr-WpY">
+                                <rect key="frame" x="134" y="519" width="107" height="30"/>
+                                <state key="normal" title="Secret Passage"/>
+                                <connections>
+                                    <segue destination="Ifq-D8-aVF" kind="show" id="BSC-eu-Wq1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k4Y-5A-RW2" firstAttribute="top" secondItem="GS4-Dr-1P7" secondAttribute="bottom" id="NLS-v1-lQU"/>
+                            <constraint firstItem="k4Y-5A-RW2" firstAttribute="height" secondItem="Vwf-Ha-s2s" secondAttribute="height" multiplier="1/2" id="dHm-ea-r5a"/>
+                            <constraint firstItem="k4Y-5A-RW2" firstAttribute="leading" secondItem="Vwf-Ha-s2s" secondAttribute="leading" id="dbr-fn-oBd"/>
+                            <constraint firstAttribute="trailing" secondItem="k4Y-5A-RW2" secondAttribute="trailing" id="gVK-Xu-f8Q"/>
+                            <constraint firstItem="qym-Hr-WpY" firstAttribute="centerX" secondItem="k4Y-5A-RW2" secondAttribute="centerX" id="hWi-CA-eTm"/>
+                            <constraint firstItem="1YK-uG-LHH" firstAttribute="top" secondItem="qym-Hr-WpY" secondAttribute="bottom" constant="118" id="hlG-Wa-XjP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jwD-hC-bHE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NkH-5s-eeU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1590" y="1074"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="ION-jM-1gX">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="3SR-3G-lEO" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PMZ-lf-pcF"/>
+                        <viewControllerLayoutGuide type="bottom" id="a5E-gZ-PEa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SS5-gN-BSx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coat_room" translatesAutoresizingMaskIntoConstraints="NO" id="jMX-oK-gD7">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz5-Vm-oP5">
+                                <rect key="frame" x="163" y="504" width="92" height="30"/>
+                                <state key="normal" title="Dyning Room"/>
+                                <connections>
+                                    <segue destination="ekx-4L-HN3" kind="show" id="b3A-q3-HKG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygn-qC-cnW">
+                                <rect key="frame" x="163" y="450" width="48" height="30"/>
+                                <state key="normal" title="Library"/>
+                                <connections>
+                                    <segue destination="aoK-6B-mPg" kind="show" id="Wu2-BD-vkP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zw-oO-fLi">
+                                <rect key="frame" x="163" y="590" width="63" height="30"/>
+                                <state key="normal" title="Stairs Up"/>
+                                <connections>
+                                    <segue destination="Qm8-V7-cJH" kind="show" id="hnb-dh-nS6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a5E-gZ-PEa" firstAttribute="top" secondItem="8zw-oO-fLi" secondAttribute="bottom" constant="47" id="7Xv-yL-iiK"/>
+                            <constraint firstItem="jMX-oK-gD7" firstAttribute="top" secondItem="PMZ-lf-pcF" secondAttribute="bottom" id="8PL-2f-BXA"/>
+                            <constraint firstItem="ygn-qC-cnW" firstAttribute="top" secondItem="jMX-oK-gD7" secondAttribute="bottom" constant="52" id="Gut-4o-uaG"/>
+                            <constraint firstItem="ygn-qC-cnW" firstAttribute="centerX" secondItem="jMX-oK-gD7" secondAttribute="centerX" id="I7H-J1-GA1"/>
+                            <constraint firstItem="jMX-oK-gD7" firstAttribute="leading" secondItem="SS5-gN-BSx" secondAttribute="leading" id="Jea-UU-Y7t"/>
+                            <constraint firstAttribute="trailing" secondItem="jMX-oK-gD7" secondAttribute="trailing" id="JpN-iG-FzB"/>
+                            <constraint firstItem="Bz5-Vm-oP5" firstAttribute="leading" secondItem="8zw-oO-fLi" secondAttribute="leading" id="QLT-4X-Gb7"/>
+                            <constraint firstItem="ygn-qC-cnW" firstAttribute="leading" secondItem="Bz5-Vm-oP5" secondAttribute="leading" id="UOK-0A-C8c"/>
+                            <constraint firstItem="8zw-oO-fLi" firstAttribute="top" secondItem="Bz5-Vm-oP5" secondAttribute="bottom" constant="56" id="XlH-Je-l9C"/>
+                            <constraint firstItem="jMX-oK-gD7" firstAttribute="height" secondItem="SS5-gN-BSx" secondAttribute="height" multiplier="1/2" id="jj1-3p-rM1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1li-Uz-jde"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWw-SZ-rA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="2032"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="W7C-hh-2ds">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ekx-4L-HN3" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aUi-IZ-U6E"/>
+                        <viewControllerLayoutGuide type="bottom" id="aLR-Tx-8eC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cU5-hL-JgZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dining_room" translatesAutoresizingMaskIntoConstraints="NO" id="Mul-In-U2Q">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iY2-gC-dEn">
+                                <rect key="frame" x="161" y="519" width="52" height="30"/>
+                                <state key="normal" title="Kitchen"/>
+                                <connections>
+                                    <segue destination="VCO-ka-lik" kind="show" id="OlA-Sf-How"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Mul-In-U2Q" secondAttribute="trailing" id="3Eu-Cc-Pbn"/>
+                            <constraint firstItem="Mul-In-U2Q" firstAttribute="leading" secondItem="cU5-hL-JgZ" secondAttribute="leading" id="3Yp-Mg-ih8"/>
+                            <constraint firstItem="Mul-In-U2Q" firstAttribute="height" secondItem="cU5-hL-JgZ" secondAttribute="height" multiplier="1/2" id="PFr-z5-3mP"/>
+                            <constraint firstItem="iY2-gC-dEn" firstAttribute="centerX" secondItem="Mul-In-U2Q" secondAttribute="centerX" id="djJ-xC-Hnx"/>
+                            <constraint firstItem="Mul-In-U2Q" firstAttribute="top" secondItem="aUi-IZ-U6E" secondAttribute="bottom" id="hW8-ww-0pP"/>
+                            <constraint firstItem="aLR-Tx-8eC" firstAttribute="top" secondItem="iY2-gC-dEn" secondAttribute="bottom" constant="118" id="oLA-Rd-TbL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aqO-KB-Wp8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pLA-dj-4hY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692" y="2032"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="fzd-xA-aVM">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="VCO-ka-lik" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1Rh-d0-x1c"/>
+                        <viewControllerLayoutGuide type="bottom" id="sKM-m2-Bor"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Bn-fw-NsL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kitchen" translatesAutoresizingMaskIntoConstraints="NO" id="q6U-xo-4He">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jg9-uX-KJm">
+                                <rect key="frame" x="148" y="519" width="78" height="30"/>
+                                <state key="normal" title="Back porch"/>
+                                <connections>
+                                    <segue destination="UBK-Ub-aeN" kind="show" id="GgI-LR-2F0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q6U-xo-4He" firstAttribute="height" secondItem="0Bn-fw-NsL" secondAttribute="height" multiplier="1/2" id="3TZ-9v-b2R"/>
+                            <constraint firstItem="q6U-xo-4He" firstAttribute="leading" secondItem="0Bn-fw-NsL" secondAttribute="leading" id="Aox-CQ-DRb"/>
+                            <constraint firstItem="q6U-xo-4He" firstAttribute="top" secondItem="1Rh-d0-x1c" secondAttribute="bottom" id="MNg-IN-JuP"/>
+                            <constraint firstItem="sKM-m2-Bor" firstAttribute="top" secondItem="jg9-uX-KJm" secondAttribute="bottom" constant="118" id="Opb-nF-NsS"/>
+                            <constraint firstAttribute="trailing" secondItem="q6U-xo-4He" secondAttribute="trailing" id="PkU-is-AQf"/>
+                            <constraint firstItem="jg9-uX-KJm" firstAttribute="centerX" secondItem="q6U-xo-4He" secondAttribute="centerX" id="Vpa-uN-QOf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YnL-4T-sU7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Pz-Aa-T4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2431" y="2032"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="Afa-1L-wwc">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="UBK-Ub-aeN" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qCw-N9-GRl"/>
+                        <viewControllerLayoutGuide type="bottom" id="l8G-1e-QbD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i0M-kh-j37">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back_porch" translatesAutoresizingMaskIntoConstraints="NO" id="PQy-Lx-4lO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="PQy-Lx-4lO" secondAttribute="trailing" id="9lk-bn-l7s"/>
+                            <constraint firstItem="PQy-Lx-4lO" firstAttribute="height" secondItem="i0M-kh-j37" secondAttribute="height" multiplier="1/2" id="SbN-QO-tEl"/>
+                            <constraint firstItem="PQy-Lx-4lO" firstAttribute="leading" secondItem="i0M-kh-j37" secondAttribute="leading" id="WOF-7P-GyY"/>
+                            <constraint firstItem="PQy-Lx-4lO" firstAttribute="top" secondItem="qCw-N9-GRl" secondAttribute="bottom" id="ut9-TM-jDk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wxp-xC-2od"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yuI-G0-U9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3212" y="2032"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="ZQP-mC-aH6">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Qm8-V7-cJH" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uby-6d-XMk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Utp-r3-4uo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xcB-R6-MBV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stairs_up" translatesAutoresizingMaskIntoConstraints="NO" id="iSu-rS-GWI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poi-Az-mIu">
+                                <rect key="frame" x="156" y="446" width="63" height="30"/>
+                                <state key="normal" title="Bedroom"/>
+                                <connections>
+                                    <segue destination="Zqz-w7-oA2" kind="show" id="3RA-nr-64a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7A9-ZE-nrA">
+                                <rect key="frame" x="156" y="566" width="71" height="30"/>
+                                <state key="normal" title="Bath room"/>
+                                <connections>
+                                    <segue destination="SmT-uO-gvO" kind="show" id="UqE-Cj-1fc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7A9-ZE-nrA" firstAttribute="top" secondItem="poi-Az-mIu" secondAttribute="bottom" constant="90" id="5Wq-PR-UaS"/>
+                            <constraint firstItem="iSu-rS-GWI" firstAttribute="top" secondItem="Uby-6d-XMk" secondAttribute="bottom" id="G2h-B4-6Ky"/>
+                            <constraint firstItem="poi-Az-mIu" firstAttribute="centerX" secondItem="iSu-rS-GWI" secondAttribute="centerX" id="LaZ-xT-Ep4"/>
+                            <constraint firstAttribute="trailing" secondItem="iSu-rS-GWI" secondAttribute="trailing" id="Xyr-xn-kgI"/>
+                            <constraint firstItem="Utp-r3-4uo" firstAttribute="top" secondItem="7A9-ZE-nrA" secondAttribute="bottom" constant="71" id="hSB-sF-GAv"/>
+                            <constraint firstItem="poi-Az-mIu" firstAttribute="leading" secondItem="7A9-ZE-nrA" secondAttribute="leading" id="lkR-QP-BXg"/>
+                            <constraint firstItem="iSu-rS-GWI" firstAttribute="height" secondItem="xcB-R6-MBV" secondAttribute="height" multiplier="1/2" id="qTf-ek-SJc"/>
+                            <constraint firstItem="iSu-rS-GWI" firstAttribute="leading" secondItem="xcB-R6-MBV" secondAttribute="leading" id="ulm-2Q-m0O"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="gPX-gT-KTC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R0H-HG-bdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1692" y="3286"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="aWh-mf-B7K">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Zqz-w7-oA2" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JbF-20-fq0"/>
+                        <viewControllerLayoutGuide type="bottom" id="odg-NJ-oIf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7w4-b6-H93">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bedroom" translatesAutoresizingMaskIntoConstraints="NO" id="yUi-hN-28E">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yUi-hN-28E" firstAttribute="height" secondItem="7w4-b6-H93" secondAttribute="height" multiplier="1/2" id="Ntb-wv-7Lf"/>
+                            <constraint firstItem="yUi-hN-28E" firstAttribute="leading" secondItem="7w4-b6-H93" secondAttribute="leading" id="ZAc-EN-qbS"/>
+                            <constraint firstItem="yUi-hN-28E" firstAttribute="top" secondItem="JbF-20-fq0" secondAttribute="bottom" id="lcO-CT-Dbv"/>
+                            <constraint firstAttribute="trailing" secondItem="yUi-hN-28E" secondAttribute="trailing" id="rqz-hI-xuF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="fSq-Yz-XQt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uez-s6-HkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2430" y="2791"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="eQK-xd-prJ">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="SmT-uO-gvO" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hux-dd-gHZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fvw-wp-1qG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jye-CE-pO7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bathroom" translatesAutoresizingMaskIntoConstraints="NO" id="rIE-Pf-QXA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rIE-Pf-QXA" firstAttribute="height" secondItem="Jye-CE-pO7" secondAttribute="height" multiplier="1/2" id="3cm-6D-Vbi"/>
+                            <constraint firstAttribute="trailing" secondItem="rIE-Pf-QXA" secondAttribute="trailing" id="HyX-Qr-Qcm"/>
+                            <constraint firstItem="rIE-Pf-QXA" firstAttribute="leading" secondItem="Jye-CE-pO7" secondAttribute="leading" id="IuM-h8-Xig"/>
+                            <constraint firstItem="rIE-Pf-QXA" firstAttribute="top" secondItem="Hux-dd-gHZ" secondAttribute="bottom" id="iat-O7-h4t"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="o5t-Ar-l76"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TZh-FZ-Cdv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2430" y="3622"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="mjc-Ot-J4W">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Ifq-D8-aVF" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cSR-LD-uf1"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Yr-TX-s2I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Goc-BU-cqi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="secret_passage" translatesAutoresizingMaskIntoConstraints="NO" id="8uK-3r-kVB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iij-YY-c0V">
+                                <rect key="frame" x="156" y="504" width="75" height="30"/>
+                                <state key="normal" title="Laboratory"/>
+                                <connections>
+                                    <segue destination="DF4-6i-ycW" kind="show" id="N0b-Yr-O84"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cu-zB-JVf">
+                                <rect key="frame" x="156" y="450" width="63" height="30"/>
+                                <state key="normal" title="Dungeon"/>
+                                <connections>
+                                    <segue destination="JhQ-Kc-aH3" kind="show" id="4SC-JI-AVa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWO-tC-h2M">
+                                <rect key="frame" x="156" y="590" width="107" height="30"/>
+                                <state key="normal" title="Mysterious lake"/>
+                                <connections>
+                                    <segue destination="zTL-Hw-RX5" kind="show" id="jlz-vz-egf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8uK-3r-kVB" firstAttribute="leading" secondItem="Goc-BU-cqi" secondAttribute="leading" id="6ai-t1-leT"/>
+                            <constraint firstItem="1Yr-TX-s2I" firstAttribute="top" secondItem="ZWO-tC-h2M" secondAttribute="bottom" constant="47" id="B83-Jk-Wf0"/>
+                            <constraint firstItem="0cu-zB-JVf" firstAttribute="centerX" secondItem="8uK-3r-kVB" secondAttribute="centerX" id="IlB-ld-oXN"/>
+                            <constraint firstItem="0cu-zB-JVf" firstAttribute="top" secondItem="8uK-3r-kVB" secondAttribute="bottom" constant="52" id="L1g-4q-R6d"/>
+                            <constraint firstItem="Iij-YY-c0V" firstAttribute="leading" secondItem="ZWO-tC-h2M" secondAttribute="leading" id="dop-eB-ZBB"/>
+                            <constraint firstItem="0cu-zB-JVf" firstAttribute="leading" secondItem="Iij-YY-c0V" secondAttribute="leading" id="lO0-94-qkc"/>
+                            <constraint firstItem="8uK-3r-kVB" firstAttribute="top" secondItem="cSR-LD-uf1" secondAttribute="bottom" id="lrU-72-e6t"/>
+                            <constraint firstAttribute="trailing" secondItem="8uK-3r-kVB" secondAttribute="trailing" id="lrl-Uj-jzX"/>
+                            <constraint firstItem="ZWO-tC-h2M" firstAttribute="top" secondItem="Iij-YY-c0V" secondAttribute="bottom" constant="56" id="uD0-KY-4Uq"/>
+                            <constraint firstItem="8uK-3r-kVB" firstAttribute="height" secondItem="Goc-BU-cqi" secondAttribute="height" multiplier="1/2" id="xJW-2a-RDy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yit-Si-yNg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QXy-67-5W0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2327" y="1074"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="JIp-12-HmF">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="JhQ-Kc-aH3" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fGV-lz-Zzx"/>
+                        <viewControllerLayoutGuide type="bottom" id="Omw-En-E2U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="baz-ho-PBN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dungeon" translatesAutoresizingMaskIntoConstraints="NO" id="Bmp-dx-brn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Bmp-dx-brn" secondAttribute="trailing" id="088-1s-3yz"/>
+                            <constraint firstItem="Bmp-dx-brn" firstAttribute="leading" secondItem="baz-ho-PBN" secondAttribute="leading" id="Kb0-qD-rSJ"/>
+                            <constraint firstItem="Bmp-dx-brn" firstAttribute="height" secondItem="baz-ho-PBN" secondAttribute="height" multiplier="1/2" id="hMQ-jC-4EJ"/>
+                            <constraint firstItem="Bmp-dx-brn" firstAttribute="top" secondItem="fGV-lz-Zzx" secondAttribute="bottom" id="iLs-GW-QVG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1mk-10-Zfh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAb-VJ-Yuy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3215" y="-32"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="mfb-eC-Xk3">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="DF4-6i-ycW" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nl4-2y-w95"/>
+                        <viewControllerLayoutGuide type="bottom" id="zZn-e0-R9O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OdP-dh-h3G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="labratory" translatesAutoresizingMaskIntoConstraints="NO" id="Edg-Vo-hxd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDt-Vk-pEh">
+                                <rect key="frame" x="153" y="531" width="69" height="30"/>
+                                <state key="normal" title="Generator"/>
+                                <connections>
+                                    <segue destination="ABC-5c-7ba" kind="show" id="13e-WR-1o2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VDt-Vk-pEh" firstAttribute="centerX" secondItem="Edg-Vo-hxd" secondAttribute="centerX" id="4rS-ba-LQr"/>
+                            <constraint firstItem="Edg-Vo-hxd" firstAttribute="height" secondItem="OdP-dh-h3G" secondAttribute="height" multiplier="1/2" id="6Iw-FM-ddN"/>
+                            <constraint firstAttribute="trailing" secondItem="Edg-Vo-hxd" secondAttribute="trailing" id="8yf-vx-pSm"/>
+                            <constraint firstItem="zZn-e0-R9O" firstAttribute="top" secondItem="VDt-Vk-pEh" secondAttribute="bottom" constant="106" id="Hak-Zy-9VS"/>
+                            <constraint firstItem="Edg-Vo-hxd" firstAttribute="top" secondItem="nl4-2y-w95" secondAttribute="bottom" id="WUr-NM-qGT"/>
+                            <constraint firstItem="Edg-Vo-hxd" firstAttribute="leading" secondItem="OdP-dh-h3G" secondAttribute="leading" id="XhO-Kq-mJo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BKu-MB-GC7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="obS-qo-Vbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3215" y="659"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="pfV-1a-ZE4">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ABC-5c-7ba" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YSB-ZN-RRJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Bd-Op-j45"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nhs-Rl-Nda">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="generator" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-NG-vrc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oYr-NG-vrc" firstAttribute="top" secondItem="YSB-ZN-RRJ" secondAttribute="bottom" id="DRX-p5-cf3"/>
+                            <constraint firstItem="oYr-NG-vrc" firstAttribute="leading" secondItem="nhs-Rl-Nda" secondAttribute="leading" id="H4p-2F-nSm"/>
+                            <constraint firstItem="oYr-NG-vrc" firstAttribute="height" secondItem="nhs-Rl-Nda" secondAttribute="height" multiplier="1/2" id="Tez-6k-Psp"/>
+                            <constraint firstAttribute="trailing" secondItem="oYr-NG-vrc" secondAttribute="trailing" id="rvC-Z0-EgC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kce-dd-8Qt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xbm-Ap-22A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4006" y="659"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="2xg-bX-HPk">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zTL-Hw-RX5" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C6B-Rp-ijH"/>
+                        <viewControllerLayoutGuide type="bottom" id="lpz-0T-ul4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aGD-Jo-6Jn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mysterious_lake" translatesAutoresizingMaskIntoConstraints="NO" id="31I-I3-YWZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W22-tI-2aS">
+                                <rect key="frame" x="136" y="531" width="103" height="30"/>
+                                <state key="normal" title="Cursed chulice"/>
+                                <connections>
+                                    <segue destination="arW-xl-Tar" kind="show" id="AdD-NO-nZB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="31I-I3-YWZ" firstAttribute="top" secondItem="C6B-Rp-ijH" secondAttribute="bottom" id="LVc-pa-LrY"/>
+                            <constraint firstItem="31I-I3-YWZ" firstAttribute="leading" secondItem="aGD-Jo-6Jn" secondAttribute="leading" id="Leq-2J-wBt"/>
+                            <constraint firstItem="lpz-0T-ul4" firstAttribute="top" secondItem="W22-tI-2aS" secondAttribute="bottom" constant="106" id="XQa-hR-7ux"/>
+                            <constraint firstItem="31I-I3-YWZ" firstAttribute="height" secondItem="aGD-Jo-6Jn" secondAttribute="height" multiplier="1/2" id="cgZ-mC-s4K"/>
+                            <constraint firstItem="W22-tI-2aS" firstAttribute="centerX" secondItem="31I-I3-YWZ" secondAttribute="centerX" id="qAV-Et-tlr"/>
+                            <constraint firstAttribute="trailing" secondItem="31I-I3-YWZ" secondAttribute="trailing" id="qC0-as-jPv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KtI-yl-tUi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sho-9V-U81" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3215" y="1325"/>
+        </scene>
+        <!--Lair View Controller-->
+        <scene sceneID="mPq-MI-Rkx">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="arW-xl-Tar" customClass="LairViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cdN-Mn-Rc9"/>
+                        <viewControllerLayoutGuide type="bottom" id="vDw-ah-FNR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KmP-kL-7IQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cursed_chalice" translatesAutoresizingMaskIntoConstraints="NO" id="ECM-s0-RIB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ECM-s0-RIB" firstAttribute="top" secondItem="cdN-Mn-Rc9" secondAttribute="bottom" id="A7d-WG-t3z"/>
+                            <constraint firstAttribute="trailing" secondItem="ECM-s0-RIB" secondAttribute="trailing" id="EU9-18-Mua"/>
+                            <constraint firstItem="ECM-s0-RIB" firstAttribute="leading" secondItem="KmP-kL-7IQ" secondAttribute="leading" id="J9y-hV-fp8"/>
+                            <constraint firstItem="ECM-s0-RIB" firstAttribute="height" secondItem="KmP-kL-7IQ" secondAttribute="height" multiplier="1/2" id="fjD-7I-Jjw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MpD-sr-n8Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FqF-XM-hyT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4006" y="1325"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back_porch" width="512" height="512"/>
+        <image name="bathroom" width="512" height="512"/>
+        <image name="bedroom" width="512" height="512"/>
+        <image name="coat_room" width="512" height="512"/>
+        <image name="cursed_chalice" width="512" height="512"/>
+        <image name="dining_room" width="512" height="512"/>
+        <image name="dungeon" width="512" height="512"/>
+        <image name="front_door" width="512" height="512"/>
+        <image name="generator" width="512" height="512"/>
+        <image name="kitchen" width="512" height="500"/>
+        <image name="labratory" width="512" height="512"/>
+        <image name="library" width="512" height="500"/>
+        <image name="mysterious_lake" width="512" height="512"/>
+        <image name="secret_passage" width="512" height="500"/>
+        <image name="stairs_up" width="512" height="500"/>
+    </resources>
+</document>
