@@ -86,9 +86,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="0It-dG-4bk" firstAttribute="top" secondItem="qSz-9s-1Wz" secondAttribute="bottom" constant="50" id="AyI-yl-mwV"/>
                             <constraint firstItem="qSz-9s-1Wz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dtq-3k-XoO"/>
                             <constraint firstItem="VID-SJ-dHR" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="40" id="E6a-FY-J8x"/>
                             <constraint firstItem="KBB-L3-aEH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G8c-Bm-wU7"/>
+                            <constraint firstItem="qSz-9s-1Wz" firstAttribute="top" secondItem="KBB-L3-aEH" secondAttribute="bottom" constant="50" id="GdT-v2-qyD"/>
                             <constraint firstItem="qSz-9s-1Wz" firstAttribute="top" secondItem="KBB-L3-aEH" secondAttribute="bottom" constant="160" id="Kok-dU-cXS"/>
                             <constraint firstItem="0It-dG-4bk" firstAttribute="top" secondItem="qSz-9s-1Wz" secondAttribute="bottom" constant="160" id="eRu-eG-K32"/>
                             <constraint firstAttribute="trailing" secondItem="A7P-hu-Wn0" secondAttribute="trailing" constant="20" id="eZy-2i-g6Q"/>
@@ -97,7 +99,22 @@
                             <constraint firstAttribute="bottom" secondItem="A7P-hu-Wn0" secondAttribute="bottom" constant="20" id="tpK-38-Wf8"/>
                             <constraint firstItem="0It-dG-4bk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vSh-dt-UNQ"/>
                             <constraint firstItem="A7P-hu-Wn0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="305/500" id="vgt-fh-yml"/>
+                            <constraint firstItem="KBB-L3-aEH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="55" id="xYa-gx-2GY"/>
                         </constraints>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="jq5-jy-czt"/>
+                                <exclude reference="Kok-dU-cXS"/>
+                                <exclude reference="eRu-eG-K32"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="xYa-gx-2GY"/>
+                                <exclude reference="GdT-v2-qyD"/>
+                                <exclude reference="AyI-yl-mwV"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
