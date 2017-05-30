@@ -11,16 +11,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         // for assignment 1
+        
         /*
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
         let viewController = ViewController()
         window?.rootViewController = viewController
-        window?.makeKey()
+        window?.makeKeyAndVisible()
         */
         
         
         // for assignment 3
 
-        /*
+        
+        
         var NavVCs: [UINavigationController] = []
         var VCs: [UIViewController] = []
 
@@ -28,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // VC 1
         let navVCfor1 = UINavigationController()
         navVCfor1.tabBarItem.image = UIImage(named: "City")
-        navVCfor1.tabBarItem.title = "Vancouver"
+        navVCfor1.tabBarItem.title = "Vancouveraaaa"
         // navVCfor1.title = "バンクーバー"  // これコメントインすると、こっちがタブバーのタイトルになる
         
         let firstVC = CityViewController()
@@ -107,8 +111,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         fifthVC.navigationItem.title = "Tokyo"
         fifthVC.view.tag = 5
         
-        // fifthVC.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 5)
-        // fifthVC.tabBarItem.title = "Tokyo"
         
         navVCfor5.setViewControllers([fifthVC], animated: true)
         
@@ -125,63 +127,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         
-        /*
-        // ページを格納する配列
-        var viewControllers: [UIViewController] = []
+        // tabBarController.viewControllers = baseControllers.map { UINavigationController(rootViewController: $0)}
+
+        // こう書くと一気にセットできる...確かに。すげえ
+        // tabBarController.viewControllers = VCs.map{ UINavigationController(rootViewController: $0) }
+         
+          // end of Assignment3
         
-        // 1ページ目になるViewController
-        // let firstSB = UIStoryboard(name: "First", bundle: nil)
-        // let firstVC = firstSB.instantiateInitialViewController()! as UIViewController
-        
-        let firstVC = UIViewController()
-        
-        
-        firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
-        
-        viewControllers.append(firstVC)
-        
-        
-        /*
-        // 2ページ目になるViewController
-        let secondSB = UIStoryboard(name: "Second", bundle: nil)
-        let secondVC = secondSB.instantiateInitialViewController()! as UIViewController
-        secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 2)
-        viewControllers.append(secondVC)
-        
-        
-        // 3ページ目になるViewController
-        let thirdSB = UIStoryboard(name: "Third", bundle: nil)
-        let thirdVC = thirdSB.instantiateInitialViewController()! as UIViewController
-        thirdVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 3)
-        
-        viewControllers.append(thirdVC)
-        */
-        
-        
-        // ViewControllerをセット
-        let tabBarController = UITabBarController()
-        tabBarController.setViewControllers(viewControllers, animated: false)
-        
-        
-        // rootViewControllerをUITabBarControllerにする
-        window = UIWindow()
-        window?.rootViewController = tabBarController
-        window?.makeKeyAndVisible()
-        */
- 
-        */
-        
-        // for 4
- 
         return true
  
     }
 }
-
-
-
-
-
-
-
 

@@ -9,10 +9,7 @@ class CityViewController: UIViewController {
         
         super.viewDidLoad()
 
-        self.view.backgroundColor = .gray  //arc4random_uniform(2) == 0 ? .cyan: .yellow
-        
-        // let cityName = ["Vancouver","Mexico","Seoul","Venice","Tokyo"]
-        // self.navigationItem.title = //cityName[self.view.tag]
+        self.view.backgroundColor = .gray
         
         let imageView = UIImageView().apply {
             $0.image = UIImage(named: self.city.weather.weatherImgPath)
@@ -32,7 +29,7 @@ class CityViewController: UIViewController {
             $0.setTitleColor(.black, for: .normal)
             $0.backgroundColor = .purple
             $0.translatesAutoresizingMaskIntoConstraints = false
-            $0.addTarget(self, action: #selector(howWeatherDetails), for: .touchUpInside)
+            $0.addTarget(self, action: #selector(moveToWeatherDetails), for: .touchUpInside)
         }
         
         self.view.addSubview(imageView)
@@ -55,14 +52,23 @@ class CityViewController: UIViewController {
     }
     
     
-    func howWeatherDetails() {
+    func moveToWeatherDetails() {
+        
         let nextVC = DetailedViewController()
-        // nextVC.view.tintColor = .yellow  // これエラー！なぜならこの時点では cityがnilだからぬるぽになる
+        
+        //nextVC.view.tintColor = .yellow  // これエラー！
+        // なぜならこの時点では cityがnilだからぬるぽになる → よく考えるとこの説明意味不明。結局謎。
+        
         nextVC.city = self.city
         
         nextVC.view.tintColor = .yellow  // だからここに書け。ただしこれ意味発揮してない、なんで
         
         self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+    
+    deinit {
+        print("deinited!!")
     }
     
 }

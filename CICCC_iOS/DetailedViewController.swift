@@ -45,13 +45,12 @@ class DetailedViewController: UIViewController {
         chanceOfPrecipitationLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         chanceOfPrecipitationLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: 40).isActive = true
     }
+    
+    
+    deinit {
+        print("detail deinited!!")
+    }
 
 }
-
-
-
-
-
-
 
 
