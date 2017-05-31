@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // for assignment 3
 
-        
+        /*
         
         var NavVCs: [UINavigationController] = []
         var VCs: [UIViewController] = []
@@ -39,8 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         firstVC.navigationItem.title = "Vancouver"
         firstVC.view.tag = 1
         
-        // firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
-        // firstVC.tabBarItem.title = "Vancouver"
+        firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 1)
+        firstVC.tabBarItem.title = "Vancouver"
         
         navVCfor1.setViewControllers([firstVC], animated: true)
         
@@ -57,8 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         secondVC.navigationItem.title = "Mexico"
         secondVC.view.tag = 2
         
-        // secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
-        // secondVC.tabBarItem.title = "Mexicorr"
+        secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
+        secondVC.tabBarItem.title = "Mexicorr"
         
         navVCfor2.setViewControllers([secondVC], animated: true)
         
@@ -132,7 +132,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // こう書くと一気にセットできる...確かに。すげえ
         // tabBarController.viewControllers = VCs.map{ UINavigationController(rootViewController: $0) }
          
-          // end of Assignment3
+        */  // end of Assignment3
         
         return true
  

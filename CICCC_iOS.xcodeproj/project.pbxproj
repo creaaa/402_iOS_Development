@@ -19,6 +19,10 @@
 		445E718C1EDA1EBF00A2B123 /* Assignment4.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 445E718B1EDA1EBF00A2B123 /* Assignment4.storyboard */; };
 		445E718E1EDA28CF00A2B123 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445E718D1EDA28CF00A2B123 /* NavigationController.swift */; };
 		445E71901EDA2AAB00A2B123 /* LairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445E718F1EDA2AAB00A2B123 /* LairViewController.swift */; };
+		44820E6A1EDE284A00297B3B /* Assignment5.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44820E691EDE284A00297B3B /* Assignment5.storyboard */; };
+		44820E6C1EDE3CA300297B3B /* MyCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E6B1EDE3CA300297B3B /* MyCanvas.swift */; };
+		44820E6E1EDE86BF00297B3B /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E6D1EDE86BF00297B3B /* CanvasViewController.swift */; };
+		44820E701EDF6F6900297B3B /* ColorPallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E6F1EDF6F6900297B3B /* ColorPallet.swift */; };
 		448AB1FC1ED77D4A00A51BC1 /* ConstraintDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448AB1FB1ED77D4A00A51BC1 /* ConstraintDef.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +41,10 @@
 		445E718B1EDA1EBF00A2B123 /* Assignment4.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Assignment4.storyboard; sourceTree = "<group>"; };
 		445E718D1EDA28CF00A2B123 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		445E718F1EDA2AAB00A2B123 /* LairViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LairViewController.swift; sourceTree = "<group>"; };
+		44820E691EDE284A00297B3B /* Assignment5.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Assignment5.storyboard; sourceTree = "<group>"; };
+		44820E6B1EDE3CA300297B3B /* MyCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCanvas.swift; sourceTree = "<group>"; };
+		44820E6D1EDE86BF00297B3B /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
+		44820E6F1EDF6F6900297B3B /* ColorPallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPallet.swift; sourceTree = "<group>"; };
 		448AB1FB1ED77D4A00A51BC1 /* ConstraintDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDef.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +85,7 @@
 				445E71841ED8DE2D00A2B123 /* Assignment2 */,
 				445E71831ED8DE1E00A2B123 /* Assignment3 */,
 				445E718A1EDA1EA600A2B123 /* Assignment4 */,
+				44820E681EDE280B00297B3B /* Assignment5 */,
 				4419EE2D1ED62459004E9A30 /* Assets.xcassets */,
 				4419EE321ED62459004E9A30 /* Info.plist */,
 			);
@@ -118,6 +127,17 @@
 				445E718F1EDA2AAB00A2B123 /* LairViewController.swift */,
 			);
 			name = Assignment4;
+			sourceTree = "<group>";
+		};
+		44820E681EDE280B00297B3B /* Assignment5 */ = {
+			isa = PBXGroup;
+			children = (
+				44820E691EDE284A00297B3B /* Assignment5.storyboard */,
+				44820E6F1EDF6F6900297B3B /* ColorPallet.swift */,
+				44820E6B1EDE3CA300297B3B /* MyCanvas.swift */,
+				44820E6D1EDE86BF00297B3B /* CanvasViewController.swift */,
+			);
+			name = Assignment5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4419EE311ED62459004E9A30 /* LaunchScreen.storyboard in Resources */,
+				44820E6A1EDE284A00297B3B /* Assignment5.storyboard in Resources */,
 				4419EE2E1ED62459004E9A30 /* Assets.xcassets in Resources */,
 				445E718C1EDA1EBF00A2B123 /* Assignment4.storyboard in Resources */,
 				4419EE2C1ED62459004E9A30 /* Assignment2.storyboard in Resources */,
@@ -194,15 +215,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44820E6E1EDE86BF00297B3B /* CanvasViewController.swift in Sources */,
 				4419EE391ED6321B004E9A30 /* ApplyProtocol.swift in Sources */,
 				4419EE291ED62459004E9A30 /* ViewController.swift in Sources */,
 				445E71891ED8F55E00A2B123 /* DetailedViewController.swift in Sources */,
 				448AB1FC1ED77D4A00A51BC1 /* ConstraintDef.swift in Sources */,
+				44820E701EDF6F6900297B3B /* ColorPallet.swift in Sources */,
 				445E718E1EDA28CF00A2B123 /* NavigationController.swift in Sources */,
 				4419EE271ED62459004E9A30 /* AppDelegate.swift in Sources */,
 				445E71821ED8D8C000A2B123 /* CityViewController.swift in Sources */,
 				445E71901EDA2AAB00A2B123 /* LairViewController.swift in Sources */,
 				445E71871ED8DE7500A2B123 /* City.swift in Sources */,
+				44820E6C1EDE3CA300297B3B /* MyCanvas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V29-cf-fAK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Canvas View Controller-->
+        <scene sceneID="agk-C1-ymB">
+            <objects>
+                <viewController id="V29-cf-fAK" customClass="CanvasViewController" customModule="CICCC_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YoD-rO-klA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fpd-1g-x0d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mjy-HC-W1S">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2G0-yf-8On" userLabel="Setting">
+                                <rect key="frame" x="16" y="30" width="343" height="29"/>
+                                <segments>
+                                    <segment title="Line"/>
+                                    <segment title="Eraser"/>
+                                    <segment title="Text"/>
+                                </segments>
+                                <connections>
+                                    <action selector="drawModeChanged:" destination="V29-cf-fAK" eventType="valueChanged" id="5sv-c5-Yis"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="MoT-q4-oMP">
+                                <rect key="frame" x="26.5" y="68" width="322" height="46"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brr-RC-p8p" customClass="ColorPallet" customModule="CICCC_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="46"/>
+                                        <color key="backgroundColor" red="0.99942404029999998" green="0.34387886150000002" blue="0.42178396429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="D7S-mm-4Be"/>
+                                            <constraint firstAttribute="height" constant="46" id="lmn-JC-cFs"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oa2-E3-ryE" customClass="ColorPallet" customModule="CICCC_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="46" y="0.0" width="46" height="46"/>
+                                        <color key="backgroundColor" red="1" green="0.64742231090000002" blue="0.26694221969999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="U2B-jX-aMp"/>
+                                            <constraint firstAttribute="width" constant="46" id="kRa-2H-mwM"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BbY-3H-FD7" customClass="ColorPallet" customModule="CICCC_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="92" y="0.0" width="46" height="46"/>
+                                        <color key="backgroundColor" red="1" green="0.97385048119999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="Dah-tu-a2Z"/>
+                                            <constraint firstAttribute="width" constant="46" id="naG-uL-j7S"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9q-bA-vZJ" customClass="ColorPallet" customModule="CICCC_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="138" y="0.0" width="46" height="46"/>
+                                        <color key="backgroundColor" red="0.55163525560000004" green="0.99942404029999998" blue="0.68431776609999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="Xm4-dB-1Bq"/>
+                                            <constraint firstAttribute="width" constant="46" id="pOy-dh-bYk"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Srd-Kh-PaH" customClass="ColorPallet" customModule="CICCC_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="184" y="0.0" width="46" height="46"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="YTv-m4-Tu8"/>
+                                            <constraint firstAttribute="height" constant="46" id="do9-Fs-Pj9"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GR8-dz-fvS" customClass="ColorPallet" customModule="CICCC_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="230" y="0.0" width="46" height="46"/>
+                                        <color key="backgroundColor" red="0.42859542579999999" green="0.52361057320000004" blue="0.99942404029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="SIe-qt-HmH"/>
+                                            <constraint firstAttribute="width" constant="46" id="TjJ-ym-eg4"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zpg-1L-sat" customClass="ColorPallet" customModule="CICCC_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="276" y="0.0" width="46" height="46"/>
+                                        <color key="backgroundColor" red="1" green="0.43529412150000002" blue="0.81176471709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="QCD-zO-YEV"/>
+                                            <constraint firstAttribute="height" constant="46" id="eHL-eY-D1y"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyI-jT-EIf" userLabel="Canvas" customClass="MyCanvas" customModule="CICCC_iOS" customModuleProvider="target">
+                                <rect key="frame" x="16" y="124" width="343" height="533"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MoT-q4-oMP" firstAttribute="centerX" secondItem="Mjy-HC-W1S" secondAttribute="centerX" id="CJZ-Mx-fne"/>
+                            <constraint firstItem="MoT-q4-oMP" firstAttribute="top" secondItem="2G0-yf-8On" secondAttribute="bottom" constant="10" id="EhC-Ab-HFP"/>
+                            <constraint firstItem="Fpd-1g-x0d" firstAttribute="top" secondItem="WyI-jT-EIf" secondAttribute="bottom" constant="10" id="P66-D4-Puq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WyI-jT-EIf" secondAttribute="trailing" id="gnx-qt-laI"/>
+                            <constraint firstItem="2G0-yf-8On" firstAttribute="leading" secondItem="Mjy-HC-W1S" secondAttribute="leadingMargin" id="jgF-b2-Z5L"/>
+                            <constraint firstItem="WyI-jT-EIf" firstAttribute="leading" secondItem="Mjy-HC-W1S" secondAttribute="leadingMargin" id="kBU-bv-Ze2"/>
+                            <constraint firstItem="WyI-jT-EIf" firstAttribute="top" secondItem="MoT-q4-oMP" secondAttribute="bottom" constant="10" id="kbl-2i-mZi"/>
+                            <constraint firstItem="2G0-yf-8On" firstAttribute="trailing" secondItem="Mjy-HC-W1S" secondAttribute="trailingMargin" id="odp-fz-GfE"/>
+                            <constraint firstItem="2G0-yf-8On" firstAttribute="top" secondItem="YoD-rO-klA" secondAttribute="bottom" constant="10" id="qPW-RD-ndP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="canvas" destination="WyI-jT-EIf" id="WAE-Z7-OLJ"/>
+                        <outlet property="palletStackView" destination="MoT-q4-oMP" id="A5O-aI-aV7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IWh-Ov-yDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-58.399999999999999" y="193.85307346326837"/>
+        </scene>
+    </scenes>
+</document>
