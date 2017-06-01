@@ -23,10 +23,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dP-of-57b">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kJ-Hj-PNl" userLabel="Contents">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="701"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="654"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2G0-yf-8On" userLabel="Setting">
                                                 <rect key="frame" x="0.0" y="20" width="375" height="29"/>
@@ -101,8 +101,11 @@
                                                 </subviews>
                                             </stackView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyI-jT-EIf" userLabel="Canvas" customClass="MyCanvas" customModule="CICCC_iOS" customModuleProvider="target">
-                                                <rect key="frame" x="8" y="134" width="359" height="509"/>
+                                                <rect key="frame" x="8" y="134" width="359" height="520"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="520" id="Zl2-tY-cUw"/>
+                                                </constraints>
                                             </containerView>
                                         </subviews>
                                         <constraints>
@@ -113,8 +116,7 @@
                                             <constraint firstItem="MoT-q4-oMP" firstAttribute="top" secondItem="2G0-yf-8On" secondAttribute="bottom" constant="20" id="Oqj-ov-K8o"/>
                                             <constraint firstItem="WyI-jT-EIf" firstAttribute="leading" secondItem="8kJ-Hj-PNl" secondAttribute="leadingMargin" id="Ze1-UG-6qL"/>
                                             <constraint firstItem="2G0-yf-8On" firstAttribute="leading" secondItem="8kJ-Hj-PNl" secondAttribute="leading" id="jTA-Zy-rQi"/>
-                                            <constraint firstAttribute="height" constant="701" id="xbe-fv-UeG"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="WyI-jT-EIf" secondAttribute="bottom" constant="50" id="xw7-Fw-mFh"/>
+                                            <constraint firstAttribute="bottom" secondItem="WyI-jT-EIf" secondAttribute="bottom" id="m4h-oI-8Qk"/>
                                             <constraint firstAttribute="trailing" secondItem="2G0-yf-8On" secondAttribute="trailing" id="zrI-ZL-lgm"/>
                                         </constraints>
                                     </view>
@@ -131,10 +133,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="4dP-of-57b" secondAttribute="trailing" id="Nz8-5T-K4k"/>
-                            <constraint firstItem="Fpd-1g-x0d" firstAttribute="top" secondItem="4dP-of-57b" secondAttribute="bottom" id="SUH-rw-hnI"/>
-                            <constraint firstItem="4dP-of-57b" firstAttribute="top" secondItem="YoD-rO-klA" secondAttribute="bottom" id="s9P-Ah-AbO"/>
-                            <constraint firstItem="4dP-of-57b" firstAttribute="leading" secondItem="Mjy-HC-W1S" secondAttribute="leading" id="tz5-vH-3Jp"/>
+                            <constraint firstItem="4dP-of-57b" firstAttribute="top" secondItem="Mjy-HC-W1S" secondAttribute="top" id="3Zu-1x-UXf"/>
+                            <constraint firstItem="4dP-of-57b" firstAttribute="leading" secondItem="Mjy-HC-W1S" secondAttribute="leading" id="S7q-p4-JzZ"/>
+                            <constraint firstAttribute="trailing" secondItem="4dP-of-57b" secondAttribute="trailing" id="VpX-3P-i5g"/>
+                            <constraint firstAttribute="bottom" secondItem="4dP-of-57b" secondAttribute="bottom" id="zdf-ga-esV"/>
                         </constraints>
                     </view>
                     <connections>
