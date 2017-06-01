@@ -1,8 +1,10 @@
 
 import UIKit
 
-class CanvasViewController: UIViewController {
+class CanvasViewController: UIViewController, UITextFieldDelegate {
 
+    
+    @IBOutlet weak var drawmodeSegmentControl: UISegmentedControl!
     @IBOutlet weak var palletStackView: UIStackView!
     @IBOutlet weak var canvas: MyCanvas!
     
@@ -19,8 +21,8 @@ class CanvasViewController: UIViewController {
             selector: #selector(handleNotification(_:)),
             name: ColorPallet.notificationName,
             object: nil
-        
         )
+        
         
     }
     
@@ -37,19 +39,44 @@ class CanvasViewController: UIViewController {
             case 1:
                 self.previousPenColor = self.canvas.penColor
                 self.canvas.penColor = .black
-                // これもないとダメ。↑で色変更した時点でwidthも変わってる
-                self.canvas.penWidth = 25
+                self.canvas.penWidth = 25  // ないとダメ。↑で色変更した時点でwidthも変わってる
             
                 self.palletStackView.isUserInteractionEnabled = false
 
             case 2:
-                print("2")
+                self.previousPenColor = self.canvas.penColor
+
+                self.palletStackView.isUserInteractionEnabled = false
+
+            
             default:
                 print("fatal")
         }
         
     }
     
+    
+//    func addTextField() {
+//        
+//        let textField = UITextField().apply {
+//            $0.frame = CGRect(x: 0, y: 0, width: 120, height: 44)
+//            $0.backgroundColor = .gray
+//            $0.textColor = .white
+//            $0.translatesAutoresizingMaskIntoConstraints = false
+//        }
+//        
+//        self.view.addSubview(textField)
+//        
+//        textField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+//        textField.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+//        
+//        textField.widthAnchor.constraint(equalToConstant: 120).isActive = true
+//        textField.heightAnchor.constraint(equalToConstant: 44).isActive = true
+//        
+//        textField.delegate = self
+//    }
+    
+    /* notification */
     
     @objc
     func handleNotification(_ notification: Notification) {
@@ -70,4 +97,30 @@ class CanvasViewController: UIViewController {
         
     }
     
+    /* delegate method */
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.backgroundColor = .black
+        textField.textColor = .white
+        
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    
+    
+    
 }
+
+
+
+
+
+
+
+
+
+
+

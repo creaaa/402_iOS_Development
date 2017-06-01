@@ -1,6 +1,21 @@
 
 import UIKit
 
+extension UIView {
+    func parentViewController() -> UIViewController? {
+        var parentResponder: UIResponder? = self
+        while true {
+            guard let nextResponder = parentResponder?.next else { return nil }
+            if let viewController = nextResponder as? UIViewController {
+                return viewController
+            }
+            parentResponder = nextResponder
+        }
+    }
+}
+
+
+
 class MyCanvas: UIView {
     
     //  ペンの色
@@ -132,16 +147,33 @@ class MyCanvas: UIView {
 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         if let touch = touches.first {
             currentPoint = touch.location(in: self)
         }
+        
+        if (self.parentViewController() as! CanvasViewController).drawmodeSegmentControl.selectedSegmentIndex == 2 {
+            addTextField()
+            touchesCancelled(touches, with: nil)
+        }
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if (self.parentViewController() as! CanvasViewController).drawmodeSegmentControl.selectedSegmentIndex == 2 {
+            return
+        }
+        
         strokeLine(touches)
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        if (self.parentViewController() as! CanvasViewController).drawmodeSegmentControl.selectedSegmentIndex == 2 {
+            return
+        }
+        
         strokeLine(touches)
     }
     
@@ -181,6 +213,8 @@ class MyCanvas: UIView {
         
         super.init(coder: aDecoder)
         
+        self.clipsToBounds = true  // キャンパスからはみ出したTFは表示させないようにする
+        
         // print("きとる")
         
         /*
@@ -195,10 +229,13 @@ class MyCanvas: UIView {
         
     }
     
-    
+    /*
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+ */
+    
+    
     
     /*
     @objc
@@ -211,6 +248,30 @@ class MyCanvas: UIView {
         // (self.superview as! CanvasViewController).previousPenColor = self.penColor
     }
     */
+    
+    
+    func addTextField() {
+        
+        let textField = UITextField().apply {
+            $0.frame = CGRect(x: currentPoint.x, y: currentPoint.y, width: 120, height: 44)
+            $0.backgroundColor = .white
+            $0.textColor = .black
+            $0.borderStyle = .roundedRect
+            $0.becomeFirstResponder()  // 生成と同時にフォーカス(=いきなり編集開始)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+        
+        self.addSubview(textField)
+        
+        textField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: textField.frame.origin.x).isActive = true
+        textField.topAnchor.constraint(equalTo: self.topAnchor, constant: textField.frame.origin.y).isActive = true
+        
+        textField.widthAnchor.constraint(equalToConstant: textField.frame.size.width).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: textField.frame.size.height).isActive = true
+        
+        textField.delegate = self.parentViewController() as! CanvasViewController
+    }
+    
     
 }
 

@@ -114,6 +114,7 @@
                     </view>
                     <connections>
                         <outlet property="canvas" destination="WyI-jT-EIf" id="WAE-Z7-OLJ"/>
+                        <outlet property="drawmodeSegmentControl" destination="2G0-yf-8On" id="Qr2-7X-Akd"/>
                         <outlet property="palletStackView" destination="MoT-q4-oMP" id="A5O-aI-aV7"/>
                     </connections>
                 </viewController>
