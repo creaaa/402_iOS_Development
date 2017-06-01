@@ -149,12 +149,14 @@ class MyCanvas: UIView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if let touch = touches.first {
-            currentPoint = touch.location(in: self)
+            currentPoint = touch.location(in: self)  // Canvasをローカル座標系(bounds)としたときの座標がちゃんととれてる
+            
+            print(currentPoint.x, currentPoint.y)
+            
         }
         
         if (self.parentViewController() as! CanvasViewController).drawmodeSegmentControl.selectedSegmentIndex == 2 {
             addTextField()
-            touchesCancelled(touches, with: nil)
         }
         
     }
@@ -253,6 +255,9 @@ class MyCanvas: UIView {
     func addTextField() {
         
         let textField = UITextField().apply {
+            
+            print("current point: ", currentPoint)
+            
             $0.frame = CGRect(x: currentPoint.x, y: currentPoint.y, width: 120, height: 44)
             $0.backgroundColor = .white
             $0.textColor = .black
@@ -261,13 +266,24 @@ class MyCanvas: UIView {
             $0.translatesAutoresizingMaskIntoConstraints = false
         }
         
+        
+        let validPoint: (x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) =
+            (textField.frame.origin.x, textField.frame.origin.y, textField.frame.size.width, textField.frame.size.height)
+        
+        // この行直前まではよい
         self.addSubview(textField)
         
-        textField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: textField.frame.origin.x).isActive = true
-        textField.topAnchor.constraint(equalTo: self.topAnchor, constant: textField.frame.origin.y).isActive = true
+        // ここからおかしい
+        print("Frame", textField.frame.origin.x, textField.frame.origin.y)
         
-        textField.widthAnchor.constraint(equalToConstant: textField.frame.size.width).isActive = true
-        textField.heightAnchor.constraint(equalToConstant: textField.frame.size.height).isActive = true
+        
+        textField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: validPoint.x).isActive = true
+        textField.topAnchor.constraint(equalTo: self.topAnchor,         constant: validPoint.y).isActive = true
+        
+        
+        textField.widthAnchor.constraint(equalToConstant: validPoint.width).isActive = true
+        textField.heightAnchor.constraint(equalToConstant: validPoint.height).isActive = true
+        
         
         textField.delegate = self.parentViewController() as! CanvasViewController
     }

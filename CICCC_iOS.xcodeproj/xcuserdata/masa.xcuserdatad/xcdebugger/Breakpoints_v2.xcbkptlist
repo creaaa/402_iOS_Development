@@ -10,45 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CICCC_iOS/CanvasViewController.swift"
-            timestampString = "518033159.800456"
+            timestampString = "518036932.17884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "CanvasViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CICCC_iOS.CanvasViewController.addTextField () -&gt; ()"
-                  moduleName = "CICCC_iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/masa/Desktop/CICCC_iOS/CICCC_iOS/CanvasViewController.swift"
-                  timestampString = "518027827.001357"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "15">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CICCC_iOS.CanvasViewController.(addTextField () -&gt; ()).(closure #1)"
-                  moduleName = "CICCC_iOS"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/masa/Desktop/CICCC_iOS/CICCC_iOS/CanvasViewController.swift"
-                  timestampString = "518027827.003926"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "keyboardWillShow(notif:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

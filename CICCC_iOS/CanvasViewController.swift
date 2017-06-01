@@ -3,14 +3,16 @@ import UIKit
 
 class CanvasViewController: UIViewController, UITextFieldDelegate {
 
-    
     @IBOutlet weak var drawmodeSegmentControl: UISegmentedControl!
     @IBOutlet weak var palletStackView: UIStackView!
     @IBOutlet weak var canvas: MyCanvas!
+        
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     
     
     var previousPenColor: UIColor = .red
+    
     
     override func viewDidLoad() {
         
@@ -29,7 +31,6 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
         
         self.configureObserver()
         
-        
     }
     
     
@@ -45,7 +46,7 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
             case 1:
                 self.previousPenColor = self.canvas.penColor
                 self.canvas.penColor = .black
-                self.canvas.penWidth = 25  // ないとダメ。↑で色変更した時点でwidthも変わってる
+                self.canvas.penWidth = 35  // ないとダメ。↑で色変更した時点でwidthも変わってる
             
                 self.palletStackView.isUserInteractionEnabled = false
 
@@ -53,7 +54,6 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
                 self.previousPenColor = self.canvas.penColor
 
                 self.palletStackView.isUserInteractionEnabled = false
-
             
             default:
                 print("fatal")
@@ -62,29 +62,9 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-//    func addTextField() {
-//        
-//        let textField = UITextField().apply {
-//            $0.frame = CGRect(x: 0, y: 0, width: 120, height: 44)
-//            $0.backgroundColor = .gray
-//            $0.textColor = .white
-//            $0.translatesAutoresizingMaskIntoConstraints = false
-//        }
-//        
-//        self.view.addSubview(textField)
-//        
-//        textField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//        textField.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-//        
-//        textField.widthAnchor.constraint(equalToConstant: 120).isActive = true
-//        textField.heightAnchor.constraint(equalToConstant: 44).isActive = true
-//        
-//        textField.delegate = self
-//    }
-    
     /* notification */
     
-    @objc
+    @objc // 選択された色パレットに枠線を加える
     func handleNotification(_ notification: Notification) {
         
         self.palletStackView.subviews.forEach {
@@ -107,11 +87,12 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
     // Notificationを設定
     func configureObserver() {
         
-        /*
         let notification = NotificationCenter.default
-        notification.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        notification.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        */
+        
+        notification.addObserver(self, selector: #selector(keyboardWillShow(notif:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
+        
+        notification.addObserver(self, selector: #selector(keyboardWillHide(notif:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
     }
     
@@ -128,7 +109,7 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
         })
         */
         
-    
+        
         guard let info = notif.userInfo else {
             fatalError("unexpected notif")
         }
@@ -141,7 +122,7 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
             fatalError("No keyboard height found")
         }
         
-        // bottomConstraint.constant = keyboardHeight
+        bottomConstraint.constant = keyboardHeight
         
         UIView.animate(withDuration: TimeInterval(animeDuration)) {
             self.view.layoutIfNeeded()
@@ -151,15 +132,37 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    
     // キーボードが消えたときに、画面を戻す
-    func keyboardWillHide(notification: Notification?) {
+    
+    func keyboardWillHide(notif: Notification) {
         
+        /*
         let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Double
         UIView.animate(withDuration: duration!, animations: { () in
             
             self.view.transform = CGAffineTransform.identity
         })
+        */
+        
+        
+        guard let info = notif.userInfo else {
+            fatalError("unexpected notif")
+        }
+        
+        guard let animeDuration = info[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else {
+            fatalError("No keyboard height found")
+        }
+        
+        bottomConstraint.constant = 0
+        
+        UIView.animate(withDuration: animeDuration) { self.view.layoutIfNeeded() }
+        
     }
+    
+    
+    
+    
     
     
     
@@ -174,18 +177,7 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    
-    
-    
-    
 }
-
-
-
-
-
-
-
 
 
 

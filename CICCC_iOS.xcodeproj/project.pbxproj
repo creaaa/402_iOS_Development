@@ -23,6 +23,7 @@
 		44820E6C1EDE3CA300297B3B /* MyCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E6B1EDE3CA300297B3B /* MyCanvas.swift */; };
 		44820E6E1EDE86BF00297B3B /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E6D1EDE86BF00297B3B /* CanvasViewController.swift */; };
 		44820E701EDF6F6900297B3B /* ColorPallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E6F1EDF6F6900297B3B /* ColorPallet.swift */; };
+		44820E721EE0979700297B3B /* Memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44820E711EE0979700297B3B /* Memo.txt */; };
 		448AB1FC1ED77D4A00A51BC1 /* ConstraintDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448AB1FB1ED77D4A00A51BC1 /* ConstraintDef.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		44820E6B1EDE3CA300297B3B /* MyCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCanvas.swift; sourceTree = "<group>"; };
 		44820E6D1EDE86BF00297B3B /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		44820E6F1EDF6F6900297B3B /* ColorPallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPallet.swift; sourceTree = "<group>"; };
+		44820E711EE0979700297B3B /* Memo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Memo.txt; sourceTree = "<group>"; };
 		448AB1FB1ED77D4A00A51BC1 /* ConstraintDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDef.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 				44820E6F1EDF6F6900297B3B /* ColorPallet.swift */,
 				44820E6B1EDE3CA300297B3B /* MyCanvas.swift */,
 				44820E6D1EDE86BF00297B3B /* CanvasViewController.swift */,
+				44820E711EE0979700297B3B /* Memo.txt */,
 			);
 			name = Assignment5;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			files = (
 				4419EE311ED62459004E9A30 /* LaunchScreen.storyboard in Resources */,
 				44820E6A1EDE284A00297B3B /* Assignment5.storyboard in Resources */,
+				44820E721EE0979700297B3B /* Memo.txt in Resources */,
 				4419EE2E1ED62459004E9A30 /* Assets.xcassets in Resources */,
 				445E718C1EDA1EBF00A2B123 /* Assignment4.storyboard in Resources */,
 				4419EE2C1ED62459004E9A30 /* Assignment2.storyboard in Resources */,

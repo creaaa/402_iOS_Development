@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="654"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2G0-yf-8On" userLabel="Setting">
-                                                <rect key="frame" x="0.0" y="20" width="375" height="29"/>
+                                                <rect key="frame" x="20" y="20" width="335" height="29"/>
                                                 <segments>
                                                     <segment title="Line"/>
                                                     <segment title="Eraser"/>
@@ -115,9 +115,9 @@
                                             <constraint firstItem="WyI-jT-EIf" firstAttribute="top" secondItem="MoT-q4-oMP" secondAttribute="bottom" constant="20" id="HQ3-Ol-hKi"/>
                                             <constraint firstItem="MoT-q4-oMP" firstAttribute="top" secondItem="2G0-yf-8On" secondAttribute="bottom" constant="20" id="Oqj-ov-K8o"/>
                                             <constraint firstItem="WyI-jT-EIf" firstAttribute="leading" secondItem="8kJ-Hj-PNl" secondAttribute="leadingMargin" id="Ze1-UG-6qL"/>
-                                            <constraint firstItem="2G0-yf-8On" firstAttribute="leading" secondItem="8kJ-Hj-PNl" secondAttribute="leading" id="jTA-Zy-rQi"/>
+                                            <constraint firstItem="2G0-yf-8On" firstAttribute="leading" secondItem="8kJ-Hj-PNl" secondAttribute="leading" constant="20" id="jTA-Zy-rQi"/>
                                             <constraint firstAttribute="bottom" secondItem="WyI-jT-EIf" secondAttribute="bottom" id="m4h-oI-8Qk"/>
-                                            <constraint firstAttribute="trailing" secondItem="2G0-yf-8On" secondAttribute="trailing" id="zrI-ZL-lgm"/>
+                                            <constraint firstAttribute="trailing" secondItem="2G0-yf-8On" secondAttribute="trailing" constant="20" id="zrI-ZL-lgm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -140,6 +140,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="zdf-ga-esV" id="OyC-TJ-nRk"/>
                         <outlet property="canvas" destination="WyI-jT-EIf" id="WAE-Z7-OLJ"/>
                         <outlet property="drawmodeSegmentControl" destination="2G0-yf-8On" id="Qr2-7X-Akd"/>
                         <outlet property="palletStackView" destination="MoT-q4-oMP" id="A5O-aI-aV7"/>
