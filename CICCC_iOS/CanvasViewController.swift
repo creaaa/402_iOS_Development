@@ -8,12 +8,16 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var palletStackView: UIStackView!
     @IBOutlet weak var canvas: MyCanvas!
     
+    
+    
     var previousPenColor: UIColor = .red
     
     override func viewDidLoad() {
         
         // 矩形に黒枠をつけるならこう
-        self.view.subviews[1].subviews[0].layer.borderWidth = 3
+        // self.view.subviews[1].subviews[0].layer.borderWidth = 3
+        self.palletStackView.subviews[0].layer.borderWidth = 3
+        
         
         // colorPalletより送られる通知の監視
         NotificationCenter.default.addObserver(
@@ -22,6 +26,8 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
             name: ColorPallet.notificationName,
             object: nil
         )
+        
+        self.configureObserver()
         
         
     }
@@ -94,8 +100,68 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
             $0.addBorderWidth()
             // $0.setNeedsDisplay()
         }
+    }
+    
+    
+    
+    // Notificationを設定
+    func configureObserver() {
+        
+        /*
+        let notification = NotificationCenter.default
+        notification.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notification.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        */
         
     }
+    
+    
+    // キーボードが現れた時に、画面全体をずらす。
+    func keyboardWillShow(notif: Notification) {
+        
+        /*
+        let rect = (notification?.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
+        let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double
+        UIView.animate(withDuration: duration!, animations: { () in
+            let transform = CGAffineTransform(translationX: 0, y: -(rect?.size.height)!)
+            self.view.transform = transform
+        })
+        */
+        
+    
+        guard let info = notif.userInfo else {
+            fatalError("unexpected notif")
+        }
+        
+        guard let keyboardHeight = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size.height else {
+            fatalError("No keyboard height found")
+        }
+        
+        guard let animeDuration = info[UIKeyboardAnimationDurationUserInfoKey] as? CGFloat else {
+            fatalError("No keyboard height found")
+        }
+        
+        // bottomConstraint.constant = keyboardHeight
+        
+        UIView.animate(withDuration: TimeInterval(animeDuration)) {
+            self.view.layoutIfNeeded()
+        }
+        
+        
+        
+    }
+    
+    // キーボードが消えたときに、画面を戻す
+    func keyboardWillHide(notification: Notification?) {
+        
+        let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Double
+        UIView.animate(withDuration: duration!, animations: { () in
+            
+            self.view.transform = CGAffineTransform.identity
+        })
+    }
+    
+    
     
     /* delegate method */
     
