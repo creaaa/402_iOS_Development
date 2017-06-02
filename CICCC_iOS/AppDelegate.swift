@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // for assignment 3
 
         /*
-        
         var NavVCs: [UINavigationController] = []
         var VCs: [UIViewController] = []
 
@@ -131,8 +130,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // こう書くと一気にセットできる...確かに。すげえ
         // tabBarController.viewControllers = VCs.map{ UINavigationController(rootViewController: $0) }
-         
-        */  // end of Assignment3
+        
+        */
+ 
+        // end of Assignment3
         
         return true
  

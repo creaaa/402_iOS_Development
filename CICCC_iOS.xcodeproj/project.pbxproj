@@ -24,6 +24,14 @@
 		44820E6E1EDE86BF00297B3B /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E6D1EDE86BF00297B3B /* CanvasViewController.swift */; };
 		44820E701EDF6F6900297B3B /* ColorPallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E6F1EDF6F6900297B3B /* ColorPallet.swift */; };
 		44820E721EE0979700297B3B /* Memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 44820E711EE0979700297B3B /* Memo.txt */; };
+		44820E751EE0A69000297B3B /* Assignment6.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44820E741EE0A69000297B3B /* Assignment6.storyboard */; };
+		44820E771EE0A7AA00297B3B /* CalcViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E761EE0A7AA00297B3B /* CalcViewController.swift */; };
+		44820E7A1EE10F2F00297B3B /* Assignment7.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44820E791EE10F2F00297B3B /* Assignment7.storyboard */; };
+		44820E7C1EE1128B00297B3B /* MyScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E7B1EE1128B00297B3B /* MyScrollViewController.swift */; };
+		44820E7E1EE1141D00297B3B /* MyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E7D1EE1141D00297B3B /* MyScrollView.swift */; };
+		44820E811EE119ED00297B3B /* Assignment8.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44820E801EE119ED00297B3B /* Assignment8.storyboard */; };
+		44820E831EE11A3B00297B3B /* A8ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E821EE11A3B00297B3B /* A8ViewController.swift */; };
+		44820E851EE12B0D00297B3B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44820E841EE12B0D00297B3B /* DetailViewController.swift */; };
 		448AB1FC1ED77D4A00A51BC1 /* ConstraintDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448AB1FB1ED77D4A00A51BC1 /* ConstraintDef.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +55,14 @@
 		44820E6D1EDE86BF00297B3B /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
 		44820E6F1EDF6F6900297B3B /* ColorPallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPallet.swift; sourceTree = "<group>"; };
 		44820E711EE0979700297B3B /* Memo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Memo.txt; sourceTree = "<group>"; };
+		44820E741EE0A69000297B3B /* Assignment6.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Assignment6.storyboard; sourceTree = "<group>"; };
+		44820E761EE0A7AA00297B3B /* CalcViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcViewController.swift; sourceTree = "<group>"; };
+		44820E791EE10F2F00297B3B /* Assignment7.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Assignment7.storyboard; sourceTree = "<group>"; };
+		44820E7B1EE1128B00297B3B /* MyScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollViewController.swift; sourceTree = "<group>"; };
+		44820E7D1EE1141D00297B3B /* MyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyScrollView.swift; sourceTree = "<group>"; };
+		44820E801EE119ED00297B3B /* Assignment8.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Assignment8.storyboard; sourceTree = "<group>"; };
+		44820E821EE11A3B00297B3B /* A8ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = A8ViewController.swift; sourceTree = "<group>"; };
+		44820E841EE12B0D00297B3B /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		448AB1FB1ED77D4A00A51BC1 /* ConstraintDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDef.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +104,9 @@
 				445E71831ED8DE1E00A2B123 /* Assignment3 */,
 				445E718A1EDA1EA600A2B123 /* Assignment4 */,
 				44820E681EDE280B00297B3B /* Assignment5 */,
+				44820E731EE0A39400297B3B /* Assignment6 */,
+				44820E781EE10F0A00297B3B /* Assignment7 */,
+				44820E7F1EE1193100297B3B /* Assignment8 */,
 				4419EE2D1ED62459004E9A30 /* Assets.xcassets */,
 				4419EE321ED62459004E9A30 /* Info.plist */,
 			);
@@ -141,6 +160,35 @@
 				44820E711EE0979700297B3B /* Memo.txt */,
 			);
 			name = Assignment5;
+			sourceTree = "<group>";
+		};
+		44820E731EE0A39400297B3B /* Assignment6 */ = {
+			isa = PBXGroup;
+			children = (
+				44820E741EE0A69000297B3B /* Assignment6.storyboard */,
+				44820E761EE0A7AA00297B3B /* CalcViewController.swift */,
+			);
+			name = Assignment6;
+			sourceTree = "<group>";
+		};
+		44820E781EE10F0A00297B3B /* Assignment7 */ = {
+			isa = PBXGroup;
+			children = (
+				44820E791EE10F2F00297B3B /* Assignment7.storyboard */,
+				44820E7D1EE1141D00297B3B /* MyScrollView.swift */,
+				44820E7B1EE1128B00297B3B /* MyScrollViewController.swift */,
+			);
+			name = Assignment7;
+			sourceTree = "<group>";
+		};
+		44820E7F1EE1193100297B3B /* Assignment8 */ = {
+			isa = PBXGroup;
+			children = (
+				44820E801EE119ED00297B3B /* Assignment8.storyboard */,
+				44820E821EE11A3B00297B3B /* A8ViewController.swift */,
+				44820E841EE12B0D00297B3B /* DetailViewController.swift */,
+			);
+			name = Assignment8;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,10 +251,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44820E811EE119ED00297B3B /* Assignment8.storyboard in Resources */,
 				4419EE311ED62459004E9A30 /* LaunchScreen.storyboard in Resources */,
 				44820E6A1EDE284A00297B3B /* Assignment5.storyboard in Resources */,
+				44820E751EE0A69000297B3B /* Assignment6.storyboard in Resources */,
 				44820E721EE0979700297B3B /* Memo.txt in Resources */,
 				4419EE2E1ED62459004E9A30 /* Assets.xcassets in Resources */,
+				44820E7A1EE10F2F00297B3B /* Assignment7.storyboard in Resources */,
 				445E718C1EDA1EBF00A2B123 /* Assignment4.storyboard in Resources */,
 				4419EE2C1ED62459004E9A30 /* Assignment2.storyboard in Resources */,
 			);
@@ -220,15 +271,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				44820E6E1EDE86BF00297B3B /* CanvasViewController.swift in Sources */,
+				44820E851EE12B0D00297B3B /* DetailViewController.swift in Sources */,
 				4419EE391ED6321B004E9A30 /* ApplyProtocol.swift in Sources */,
 				4419EE291ED62459004E9A30 /* ViewController.swift in Sources */,
 				445E71891ED8F55E00A2B123 /* DetailedViewController.swift in Sources */,
 				448AB1FC1ED77D4A00A51BC1 /* ConstraintDef.swift in Sources */,
 				44820E701EDF6F6900297B3B /* ColorPallet.swift in Sources */,
+				44820E771EE0A7AA00297B3B /* CalcViewController.swift in Sources */,
 				445E718E1EDA28CF00A2B123 /* NavigationController.swift in Sources */,
 				4419EE271ED62459004E9A30 /* AppDelegate.swift in Sources */,
+				44820E831EE11A3B00297B3B /* A8ViewController.swift in Sources */,
 				445E71821ED8D8C000A2B123 /* CityViewController.swift in Sources */,
+				44820E7E1EE1141D00297B3B /* MyScrollView.swift in Sources */,
 				445E71901EDA2AAB00A2B123 /* LairViewController.swift in Sources */,
+				44820E7C1EE1128B00297B3B /* MyScrollViewController.swift in Sources */,
 				445E71871ED8DE7500A2B123 /* City.swift in Sources */,
 				44820E6C1EDE3CA300297B3B /* MyCanvas.swift in Sources */,
 			);

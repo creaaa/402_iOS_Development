@@ -21,13 +21,13 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
         self.palletStackView.subviews[0].layer.borderWidth = 3
         
         
-        // colorPalletより送られる通知の監視
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(handleNotification(_:)),
-            name: ColorPallet.notificationName,
-            object: nil
-        )
+//        // colorPalletより送られる通知の監視
+//        NotificationCenter.default.addObserver(
+//            self,
+//            selector: #selector(handleNotification(_:)),
+//            name: ColorPallet.notificationName,
+//            object: nil
+//        )
         
         self.configureObserver()
         
@@ -56,7 +56,7 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
                 self.palletStackView.isUserInteractionEnabled = false
             
             default:
-                print("fatal")
+                fatalError("never executed")
         }
         
     }
@@ -89,6 +89,16 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
         
         let notification = NotificationCenter.default
         
+        // 1. colorPalletより送られる通知の監視
+        notification.addObserver(
+            self,
+            selector: #selector(handleNotification(_:)),
+            name: ColorPallet.notificationName,
+            object: nil
+        )
+
+        
+        // 2. テキストフィールド入力時、キーワードで隠れないようにする
         notification.addObserver(self, selector: #selector(keyboardWillShow(notif:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         
@@ -99,16 +109,7 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
     
     // キーボードが現れた時に、画面全体をずらす。
     func keyboardWillShow(notif: Notification) {
-        
-        /*
-        let rect = (notification?.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue
-        let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double
-        UIView.animate(withDuration: duration!, animations: { () in
-            let transform = CGAffineTransform(translationX: 0, y: -(rect?.size.height)!)
-            self.view.transform = transform
-        })
-        */
-        
+ 
         
         guard let info = notif.userInfo else {
             fatalError("unexpected notif")
