@@ -33,7 +33,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.maximumZoomScale = 3
         
         view.layoutIfNeeded()
-        
     }
     
 
@@ -43,12 +42,10 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        
         return imageView
-        
     }
-    
-    
-    
 }
+
+

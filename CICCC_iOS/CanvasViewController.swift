@@ -10,24 +10,12 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     
-    
     var previousPenColor: UIColor = .red
-    
     
     override func viewDidLoad() {
         
         // 矩形に黒枠をつけるならこう
-        // self.view.subviews[1].subviews[0].layer.borderWidth = 3
         self.palletStackView.subviews[0].layer.borderWidth = 3
-        
-        
-//        // colorPalletより送られる通知の監視
-//        NotificationCenter.default.addObserver(
-//            self,
-//            selector: #selector(handleNotification(_:)),
-//            name: ColorPallet.notificationName,
-//            object: nil
-//        )
         
         self.configureObserver()
         
@@ -64,8 +52,8 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
     
     /* notification */
     
-    @objc // 選択された色パレットに枠線を加える
-    func handleNotification(_ notification: Notification) {
+    // 選択された色パレットに枠線を加える
+    func addBorderWidth(_ notification: Notification) {
         
         self.palletStackView.subviews.forEach {
             ($0 as! ColorPallet).isSelected = false
@@ -78,10 +66,8 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
         
         (self.palletStackView.subviews as! [ColorPallet]).forEach {
             $0.addBorderWidth()
-            // $0.setNeedsDisplay()
         }
     }
-    
     
     
     // Notificationを設定
@@ -92,12 +78,11 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
         // 1. colorPalletより送られる通知の監視
         notification.addObserver(
             self,
-            selector: #selector(handleNotification(_:)),
+            selector: #selector(addBorderWidth(_:)),
             name: ColorPallet.notificationName,
             object: nil
         )
 
-        
         // 2. テキストフィールド入力時、キーワードで隠れないようにする
         notification.addObserver(self, selector: #selector(keyboardWillShow(notif:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
@@ -110,7 +95,6 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
     // キーボードが現れた時に、画面全体をずらす。
     func keyboardWillShow(notif: Notification) {
  
-        
         guard let info = notif.userInfo else {
             fatalError("unexpected notif")
         }
@@ -128,24 +112,12 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
         UIView.animate(withDuration: TimeInterval(animeDuration)) {
             self.view.layoutIfNeeded()
         }
-        
-        
-        
     }
     
     
     // キーボードが消えたときに、画面を戻す
     
     func keyboardWillHide(notif: Notification) {
-        
-        /*
-        let duration: TimeInterval? = notification?.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Double
-        UIView.animate(withDuration: duration!, animations: { () in
-            
-            self.view.transform = CGAffineTransform.identity
-        })
-        */
-        
         
         guard let info = notif.userInfo else {
             fatalError("unexpected notif")
@@ -160,12 +132,6 @@ class CanvasViewController: UIViewController, UITextFieldDelegate {
         UIView.animate(withDuration: animeDuration) { self.view.layoutIfNeeded() }
         
     }
-    
-    
-    
-    
-    
-    
     
     /* delegate method */
     

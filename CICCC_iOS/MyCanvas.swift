@@ -149,17 +149,16 @@ class MyCanvas: UIView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if let touch = touches.first {
-            currentPoint = touch.location(in: self)  // Canvasをローカル座標系(bounds)としたときの座標がちゃんととれてる
-            
+            // Canvasをローカル座標系(bounds)としたときの座標がちゃんととれてる
+            currentPoint = touch.location(in: self)
             print(currentPoint.x, currentPoint.y)
-            
         }
         
         if (self.parentViewController() as! CanvasViewController).drawmodeSegmentControl.selectedSegmentIndex == 2 {
             addTextField()
         }
-        
     }
+    
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -168,6 +167,7 @@ class MyCanvas: UIView {
         }
         
         strokeLine(touches)
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -212,45 +212,10 @@ class MyCanvas: UIView {
     
     //　SBで生成されたUIViewは、 init(frame_)が呼ばれず、こっちだけが呼ばれる。注意。
     required init?(coder aDecoder: NSCoder) {
-        
         super.init(coder: aDecoder)
-        
         self.clipsToBounds = true  // キャンパスからはみ出したTFは表示させないようにする
-        
-        // print("きとる")
-        
-        /*
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(handleNotification(_:)),
-            name: ColorPallet.notificationName,
-            object: nil
-            
-        )
-        */
-        
     }
-    
-    /*
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
- */
-    
-    
-    
-    /*
-    @objc
-    func handleNotification(_ notification: Notification) {
-        
-        let info = notification.userInfo
-        
-        self.penColor = (info!["sender"] as! UIView).backgroundColor!
-        
-        // (self.superview as! CanvasViewController).previousPenColor = self.penColor
-    }
-    */
-    
+
     
     func addTextField() {
         
@@ -283,20 +248,7 @@ class MyCanvas: UIView {
         
         textField.widthAnchor.constraint(equalToConstant: validPoint.width).isActive = true
         textField.heightAnchor.constraint(equalToConstant: validPoint.height).isActive = true
-        
-        
         textField.delegate = self.parentViewController() as! CanvasViewController
     }
-    
-    
 }
-
-
-
-
-
-
-
-
-
 

@@ -39,7 +39,7 @@ class CalcViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    // delegate method 
+    /* delegate method */
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         showTip(per: Int(tipPercentageSlider.value))
@@ -54,14 +54,13 @@ class CalcViewController: UIViewController, UITextFieldDelegate {
     func showTip(per: Int) {
         
         if (billTextField.text?.isEmpty)! {
-            self.tipAmountLabel.text = "$0"
+            self.tipAmountLabel.text = "Tip: $0"
             return
         }
         
         let totalTip = billTextField.text.flatMap{ Int($0) }! * per / 100
         
         self.tipAmountLabel.text = "Tip: $" + totalTip.description
-        
     }
     
  
@@ -70,9 +69,5 @@ class CalcViewController: UIViewController, UITextFieldDelegate {
             billTextField.resignFirstResponder()
         }
     }
-    
 }
-
-
-
 

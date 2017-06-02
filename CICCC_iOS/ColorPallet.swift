@@ -36,7 +36,5 @@ class ColorPallet: UIView {
             self.layer.borderWidth = 0
         }
     }
-    
-    
-
 }
+

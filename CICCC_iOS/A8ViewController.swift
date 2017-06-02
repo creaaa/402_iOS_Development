@@ -11,26 +11,26 @@ class A8ViewController: UIViewController, UIScrollViewDelegate {
         
         scrollView.delegate = self
         
-        let imageView1 = UIImageView(image: UIImage(named: "kitchen")).apply {
-            $0.frame = CGRect.zero
-            $0.tag = 1
-            $0.isUserInteractionEnabled = true
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
-        let imageView2 = UIImageView(image: UIImage(named: "bathroom")).apply {
-            $0.frame = CGRect.zero
-            $0.tag = 2
-            $0.isUserInteractionEnabled = true
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
-        let imageView3 = UIImageView(image: UIImage(named: "library")).apply {
-            $0.frame = CGRect.zero
-            $0.tag = 3
-            $0.isUserInteractionEnabled = true
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
+        self.title = "Image Gallary"
         
-        [imageView1, imageView2, imageView3].forEach { self.view.addSubview($0) }
+        var tag = 1
+        
+        let imageView1 = UIImageView(image: UIImage(named: "kitchen"))
+        let imageView2 = UIImageView(image: UIImage(named: "bathroom"))
+        let imageView3 = UIImageView(image: UIImage(named: "library"))
+        
+        
+        [imageView1, imageView2, imageView3].forEach {
+            
+            $0.frame = CGRect.zero
+            $0.tag = tag
+            $0.isUserInteractionEnabled = true
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            
+            self.view.addSubview($0)
+            
+            tag += 1
+        }
         
 
         // こうすると、ナビゲーションバーのbottomを基準に制約をかけられる
@@ -53,15 +53,9 @@ class A8ViewController: UIViewController, UIScrollViewDelegate {
         imageView3.heightAnchor.constraint(equalTo: imageView3.widthAnchor, multiplier: 1).isActive = true
         
     }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
+
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //performSegue(withIdentifier: "ImageTapped", sender: sender)
         move(tag: (touches.first?.view?.tag)!)
     }
     
@@ -80,5 +74,5 @@ class A8ViewController: UIViewController, UIScrollViewDelegate {
             vc.imagePath = imagePath
         }
     }
-    
 }
+

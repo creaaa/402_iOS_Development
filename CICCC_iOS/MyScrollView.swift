@@ -1,8 +1,4 @@
 
 import UIKit
 
-class MyScrollView: UIView {
-
-    
-    
-}
+class MyScrollView: UIView {}
