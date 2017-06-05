@@ -15,7 +15,6 @@ extension UIView {
 }
 
 
-
 class MyCanvas: UIView {
     
     //  ペンの色
@@ -148,11 +147,9 @@ class MyCanvas: UIView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if let touch = touches.first {
-            
             // Canvasをローカル座標系(bounds)としたときの座標がちゃんととれてる
             currentPoint = touch.location(in: self)
             print(currentPoint.x, currentPoint.y)
-            
         }
         
         if (self.parentViewController() as! CanvasViewController).drawmodeSegmentControl.selectedSegmentIndex == 2 {
@@ -166,7 +163,6 @@ class MyCanvas: UIView {
         if (self.parentViewController() as! CanvasViewController).drawmodeSegmentControl.selectedSegmentIndex == 2 {
             return
         }
-        
         
         if let touch = touches.first {
             
