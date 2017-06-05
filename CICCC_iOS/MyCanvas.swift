@@ -144,14 +144,15 @@ class MyCanvas: UIView {
     */
     
     var currentPoint = CGPoint.zero
-
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         if let touch = touches.first {
+            
             // Canvasをローカル座標系(bounds)としたときの座標がちゃんととれてる
             currentPoint = touch.location(in: self)
             print(currentPoint.x, currentPoint.y)
+            
         }
         
         if (self.parentViewController() as! CanvasViewController).drawmodeSegmentControl.selectedSegmentIndex == 2 {
@@ -166,7 +167,21 @@ class MyCanvas: UIView {
             return
         }
         
-        strokeLine(touches)
+        
+        if let touch = touches.first {
+            
+            let newPoint = touch.location(in: self)
+            
+            // 前回の座標と比較して、加速度レベルを定義
+            let accelLvSeed2 = abs(Int(newPoint.x - currentPoint.x)) + abs(Int(newPoint.y - currentPoint.y))
+            
+            var accelLv: Int { return accelLvSeed2 / 5 }
+            
+            penWidth = CGFloat(accelLv)
+            
+            strokeLine(touches)
+            
+        }
         
     }
     
