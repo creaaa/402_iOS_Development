@@ -362,12 +362,12 @@ class ViewController: UIViewController {
         // ここ、コメントアウトしたら(=制約は更新したが、layoutは更新しようとしない)どうなるか？
         // → 問題なく動いた。別に self.view.layoutIfNeeded()しなくてもよかったのだ...
         
-        /*
+        
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
             // self.view.setNeedsLayout() // これはダメ、変化なし
         }
-        */
+        
         
         
         // ついでにボタンのラベルも変えとくね

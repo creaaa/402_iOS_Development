@@ -6,7 +6,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     var imagePath = ""
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView:  UIImageView!
     
     override func viewDidLoad() {
         
@@ -32,7 +32,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.minimumZoomScale = 1
         scrollView.maximumZoomScale = 3
         
-        view.layoutIfNeeded()
+//        view.layoutIfNeeded()
+        
     }
     
 
@@ -46,6 +47,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView
     }
+    
+    
 }
 
 

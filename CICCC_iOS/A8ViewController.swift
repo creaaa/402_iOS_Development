@@ -1,6 +1,12 @@
 
 import UIKit
 
+extension UIScrollView {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.next?.touchesBegan(touches, with: event)
+    }
+}
+
 class A8ViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -27,7 +33,8 @@ class A8ViewController: UIViewController, UIScrollViewDelegate {
             $0.isUserInteractionEnabled = true
             $0.translatesAutoresizingMaskIntoConstraints = false
             
-            self.view.addSubview($0)
+//            self.view.addSubview($0)
+            self.scrollView.addSubview($0)
             
             tag += 1
         }
@@ -36,9 +43,12 @@ class A8ViewController: UIViewController, UIScrollViewDelegate {
         // こうすると、ナビゲーションバーのbottomを基準に制約をかけられる
         // (=ナビゲーションバーがあると、topLayoutGuide がせり下がってくる)
         imageView1.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor).isActive = true
-        imageView1.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        imageView1.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true
         imageView1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/3).isActive = true
         imageView1.heightAnchor.constraint(equalTo: imageView1.widthAnchor, multiplier: 1).isActive = true
+        
+        imageView1.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
+
         
         
         imageView2.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor).isActive = true
@@ -46,17 +56,30 @@ class A8ViewController: UIViewController, UIScrollViewDelegate {
         imageView2.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/3).isActive = true
         imageView2.heightAnchor.constraint(equalTo: imageView2.widthAnchor, multiplier: 1).isActive = true
         
+        imageView2.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
+
+
         
         imageView3.topAnchor.constraint(equalTo: self.topLayoutGuide.bottomAnchor).isActive = true
         imageView3.leadingAnchor.constraint(equalTo: imageView2.trailingAnchor).isActive = true
         imageView3.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1/3).isActive = true
         imageView3.heightAnchor.constraint(equalTo: imageView3.widthAnchor, multiplier: 1).isActive = true
         
+        
+        imageView3.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        
+        imageView3.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
+        
     }
 
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        move(tag: (touches.first?.view?.tag)!)
+        
+        let touch = touches.first!
+        
+        if let _ = touch.view as? UIImageView {
+            move(tag: (touch.view?.tag)!)
+        }
     }
     
     

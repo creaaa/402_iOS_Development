@@ -2,7 +2,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
     static let hoge = 42
@@ -133,10 +133,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         */
  
+        
+        
+        
+        
+        
         // end of Assignment3
+        
+        // ----------Assignment 9 -------------
+        
+        
+        /* なんか、これ書くと逆にナビバー左に戻るボタンでなくなるから、消した
+        let splitViewController = window!.rootViewController as! UISplitViewController
+        
+        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+        
+        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        
+        splitViewController.delegate = self
+        */
+        
+        /*
+        let tabbarController = UITabBarController()
+        
+        let vc1 = UIViewController()
+        vc1.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 1)
+        vc1.view.backgroundColor = .cyan
+        
+        let nv1 = UINavigationController(rootViewController: vc1)
+        
+        let vc2 = UIViewController()
+        vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 2)
+        vc2.view.backgroundColor = .yellow
+        
+        let nv2 = UINavigationController(rootViewController: vc2)
+        
+        tabbarController.viewControllers = [nv1, nv2]
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = tabbarController
+        window?.makeKeyAndVisible()
+        */
         
         return true
  
     }
 }
+
+
+
+
+
+
+
+
+
+
 
